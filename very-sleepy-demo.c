@@ -50,6 +50,16 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+/*---------Librerías y definiciones para Multicast---------------------------*/
+#include "contiki-lib.h"
+#include "contiki-net.h"
+#include "net/ipv6/multicast/uip-mcast6.h"
+#include <string.h>
+
+#define MCAST_SINK_UDP_PORT 3001 /*Host byte order*/
+static struct uip_udp_conn *sink_conn;
+#define UIP_IP_BUF  ((struct uip_ip_hdr *)&uip_buf[UIP_LLH_LEN])
+static uip_ds6_maddr_t * group_dir;
 /*---------------------------------------------------------------------------*/
 /* Normal mode duration params in seconds */
 #define NORMAL_OP_DURATION_DEFAULT 10
@@ -147,6 +157,32 @@ static void readings_get_handler(void *request, void *response, uint8_t *buffer,
 }
 /*---------------------------------------------------------------------------*/
 RESOURCE(readings_resource, "title=\"Sensor Readings\";obs",readings_get_handler, NULL, NULL, NULL);  //Recurso lectura de Sensores
+/*---------------------------------------------------------------------------*/
+static void groupipv6_get_handler(void *request, void *response, uint8_t *buffer,uint16_t preferred_size, int32_t *offset)
+{
+  unsigned int accept = -1;
+
+
+  if(request != NULL) {							//Si se acepta la petición
+    REST.get_header_accept(request, &accept);
+  }
+
+  if(accept == -1 || accept == REST.type.APPLICATION_JSON) {
+    REST.set_header_content_type(response, REST.type.APPLICATION_JSON);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Group_Dir\":{%lu}",&group_dir);
+    REST.set_response_payload(response, buffer, strlen((char *)buffer));
+  } else if(accept == REST.type.TEXT_PLAIN) {
+    REST.set_header_content_type(response, REST.type.TEXT_PLAIN);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "Group_Dir=%lu",&group_dir);
+    REST.set_response_payload(response, buffer, strlen((char *)buffer));
+  } else {
+    REST.set_response_status(response, REST.status.NOT_ACCEPTABLE);
+    REST.set_response_payload(response, not_supported_msg,strlen(not_supported_msg));
+  }
+}
+/*---------------------------------------------------------------------------*/
+RESOURCE(groupipv6_resource, "title=\"Group Direction\";obs",groupipv6_get_handler, NULL, NULL, NULL);  //
+
 /*---------------------------------------------------------------------------*/
 static void conf_get_handler(void *request, void *response, uint8_t *buffer,uint16_t preferred_size, int32_t *offset)
 {
@@ -397,6 +433,31 @@ static void switch_to_very_sleepy(void)
 {
   state = STATE_VERY_SLEEPY;
 }
+/*------------------------Función de unión a multicast group-----------------*/
+static uip_ds6_maddr_t * join_mcast_group(void)
+{
+  uip_ipaddr_t addr;
+  uip_ds6_maddr_t *rv;
+
+  /* First, set our v6 global */
+  uip_ip6addr(&addr, UIP_DS6_DEFAULT_PREFIX, 0, 0, 0, 0, 0, 0, 0);    //Crea una direccion ipv6 ~(fd00::)
+  uip_ds6_set_addr_iid(&addr, &uip_lladdr);                           //Fija los ultimos 64 bits de la dirección con la dirección MAC
+  uip_ds6_addr_add(&addr, 0, ADDR_AUTOCONF);                          //Añade una dirección unicast (addr) a la interfaz
+
+  /*
+   * IPHC will use stateless multicast compression for this destination
+   * (M=1, DAC=0), with 32 inline bits (1E 89 AB CD)
+   */
+  uip_ip6addr(&addr, 0xFF1E,0,0,0,0,0,0x89,0xABCD);                   //Crea la direccion (FF1E::89:ABCD)
+  rv = uip_ds6_maddr_add(&addr);                                      //Añade la dirección multicast rv a la interfaz (Sup)
+
+  if(rv) {
+    PRINTF("Joined multicast group ");
+    PRINT6ADDR(&uip_ds6_maddr_lookup(&addr)->ipaddr);
+    PRINTF("\n");
+  }
+  return rv;
+}
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(very_sleepy_demo_process, ev, data)
 {
@@ -406,7 +467,6 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
   PROCESS_BEGIN();
 
   SENSORS_ACTIVATE(batmon_sensor);			             //Inicia el sensor de la batería
-  SENSORS_ACTIVATE(tmp_007_sensor);			             //Inicia el sensor de temperatura
   config.mode = VERY_SLEEPY_MODE_OFF;					       //Configura el Modo por defecto
   config.interval = PERIODIC_INTERVAL_DEFAULT;			 //Configura el Intervalo por defecto (30s)
   config.duration = NORMAL_OP_DURATION_DEFAULT;			 //Configura la duracion por defecto  (10s)
@@ -416,6 +476,11 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
 
   event_new_config = process_alloc_event();				   //Se reserva espacio para evento de nueva configuración
   event_new_op = process_alloc_event();              //Se reserva espacio para evento de nueva operacion
+
+  group_dir = join_mcast_group();                           //Unión al grupo multicast
+  sink_conn = udp_new(NULL, UIP_HTONS(0), NULL);            //Nueva conexión UDP (con puerto por defecto)
+  udp_bind(sink_conn, UIP_HTONS(MCAST_SINK_UDP_PORT));      //Fija el puerto para la conexión UDP
+
 
   rest_init_engine();									               //Activa el motor REST (permite el recibir y mandar datos)
 
