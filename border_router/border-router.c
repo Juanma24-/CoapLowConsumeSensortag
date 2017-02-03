@@ -49,6 +49,8 @@
 #include "dev/button-sensor.h"
 #include "dev/slip.h"
 
+#include "net/ipv6/multicast/uip-mcast6.h"    //Soporte multicast
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -3,6 +3,8 @@ all: $(CONTIKI_PROJECT)
 
 CONTIKI=../../../..
 
+MODULES += core/net/ipv6/multicast
+
 #linker optimizations
 SMALL=1
 
