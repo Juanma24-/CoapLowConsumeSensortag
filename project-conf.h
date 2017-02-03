@@ -41,9 +41,15 @@
 #undef UIP_CONF_IPV6_RPL
 #undef UIP_CONF_ND6_SEND_RA
 #undef UIP_CONF_ROUTER
+#undef NETSTACK_CONF_WITH_IPV6	
 #define UIP_CONF_ND6_SEND_RA         0
-#define UIP_CONF_ROUTER              1
-#define UIP_MCAST6_ROUTE_CONF_ROUTES 1
+#define UIP_CONF_ROUTER              1			//El nodo actúa como Router
+#define UIP_CONF_IPV6_RPL			 1			//RPL es usado para rutar Ipv6
+#define UIP_MCAST6_ROUTE_CONF_ROUTES 1			//
+#define NETSTACK_CONF_WITH_IPV6      1			//Especifica que ipv6 debe ser usado
+
+#undef UIP_CONF_TCP
+#define UIP_CONF_TCP 0
 
 /* Code/RAM footprint savings so that things will fit on our device */
 #undef NBR_TABLE_CONF_MAX_NEIGHBORS
@@ -58,14 +64,13 @@
 /*---------------------------------------------------------------------------*/
 /* Enable the ROM bootloader */
 #define ROM_BOOTLOADER_ENABLE                 1
-#define BOARD_CONF_DEBUGGER_DEVPACK	1
+#define BOARD_CONF_DEBUGGER_DEVPACK			  1
 /* Disable button shutdown functionality */
 #define BUTTON_SENSOR_CONF_ENABLE_SHUTDOWN    1
 /*---------------------------------------------------------------------------*/
 /* For very sleepy operation */
 #define RF_BLE_CONF_ENABLED                   0
 #define UIP_DS6_CONF_PERIOD        CLOCK_SECOND
-#define UIP_CONF_TCP                          0
 #define RPL_CONF_LEAF_ONLY                    1
 
 #define REST_MAX_CHUNK_SIZE     128

@@ -54,6 +54,7 @@
 #include "contiki-lib.h"
 #include "contiki-net.h"
 #include "net/ipv6/multicast/uip-mcast6.h"
+
 #include <string.h>
 
 #define MCAST_SINK_UDP_PORT 3001 /*Host byte order*/
@@ -169,11 +170,11 @@ static void groupipv6_get_handler(void *request, void *response, uint8_t *buffer
 
   if(accept == -1 || accept == REST.type.APPLICATION_JSON) {
     REST.set_header_content_type(response, REST.type.APPLICATION_JSON);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Group_Dir\":{%lu}",&group_dir);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Group_Dir\":{%lu}",(uint16_t*)group_dir);
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else if(accept == REST.type.TEXT_PLAIN) {
     REST.set_header_content_type(response, REST.type.TEXT_PLAIN);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "Group_Dir=%lu",&group_dir);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "Group_Dir=%lu",(uint16_t*)group_dir);
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else {
     REST.set_response_status(response, REST.status.NOT_ACCEPTABLE);
@@ -451,11 +452,6 @@ static uip_ds6_maddr_t * join_mcast_group(void)
   uip_ip6addr(&addr, 0xFF1E,0,0,0,0,0,0x89,0xABCD);                   //Crea la direccion (FF1E::89:ABCD)
   rv = uip_ds6_maddr_add(&addr);                                      //Añade la dirección multicast rv a la interfaz (Sup)
 
-  if(rv) {
-    PRINTF("Joined multicast group ");
-    PRINT6ADDR(&uip_ds6_maddr_lookup(&addr)->ipaddr);
-    PRINTF("\n");
-  }
   return rv;
 }
 /*---------------------------------------------------------------------------*/

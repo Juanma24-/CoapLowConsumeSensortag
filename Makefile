@@ -9,4 +9,6 @@ APPS += er-coap
 APPS += rest-engine
 
 CONTIKI = ../../..
+MODULES += core/net/ipv6/multicast
+
 include $(CONTIKI)/Makefile.include
