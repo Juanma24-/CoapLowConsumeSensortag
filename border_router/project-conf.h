@@ -34,7 +34,7 @@
 #include "net/ipv6/multicast/uip-mcast6-engines.h"
 
 #ifndef WITH_NON_STORING
-#define WITH_NON_STORING 0 /* Set this to run with non-storing mode */
+	#define WITH_NON_STORING 0 /* Set this to run with non-storing mode */
 #endif /* WITH_NON_STORING */
 
 #if WITH_NON_STORING
@@ -82,7 +82,7 @@
 #define NETSTACK_CONF_WITH_IPV6      1			//Especifica que ipv6 debe ser usado
 
 #undef UIP_CONF_TCP
-#define UIP_CONF_TCP 0
+#define UIP_CONF_TCP 1							//Se da soporte a TCP (posible fuente de conflicto)
 
 /* Code/RAM footprint savings so that things will fit on our device */
 #undef NBR_TABLE_CONF_MAX_NEIGHBORS
