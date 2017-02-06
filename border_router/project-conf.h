@@ -39,11 +39,11 @@
 
 #if WITH_NON_STORING
 	#undef RPL_NS_CONF_LINK_NUM
-	#define RPL_NS_CONF_LINK_NUM 40 /* Number of links maintained at the root */
+	#define RPL_NS_CONF_LINK_NUM 40 							/* Number of links maintained at the root */
 	#undef UIP_CONF_MAX_ROUTES
-	#define UIP_CONF_MAX_ROUTES 0 /* No need for routes */
+	#define UIP_CONF_MAX_ROUTES 0 								/* No need for routes */
 	#undef RPL_CONF_MOP
-	#define RPL_CONF_MOP RPL_MOP_NON_STORING /* Mode of operation*/
+	#define RPL_CONF_MOP RPL_MOP_NON_STORING 			/* Mode of operation*/
 #endif /* WITH_NON_STORING */
 
 #ifndef UIP_FALLBACK_INTERFACE
@@ -51,15 +51,15 @@
 #endif
 
 #ifndef QUEUEBUF_CONF_NUM
-#define QUEUEBUF_CONF_NUM          4
+#define QUEUEBUF_CONF_NUM          4					//Número de buffers de cola (un nº pequeño compromete el rendimiento)
 #endif
 
 #ifndef UIP_CONF_BUFFER_SIZE
-#define UIP_CONF_BUFFER_SIZE    140
+#define UIP_CONF_BUFFER_SIZE    140						//Tamaño del buffer para los paquetes UIP (límite superior de paquete IP)
 #endif
 
 #ifndef UIP_CONF_RECEIVE_WINDOW
-#define UIP_CONF_RECEIVE_WINDOW  60
+#define UIP_CONF_RECEIVE_WINDOW  60					 //Tamaño de la ventana de recepción
 #endif
 
 #ifndef WEBSERVER_CONF_CFS_CONNS
@@ -76,17 +76,17 @@
 #undef UIP_CONF_ND6_SEND_RA
 #undef UIP_CONF_ROUTER
 #undef NETSTACK_CONF_WITH_IPV6
-#define UIP_CONF_ND6_SEND_RA         0
-#define UIP_CONF_ROUTER              1
-#define UIP_MCAST6_ROUTE_CONF_ROUTES 1
+#define UIP_CONF_ND6_SEND_RA         0			//
+#define UIP_CONF_ROUTER              1			//El nodo actúa como Router
+#define UIP_MCAST6_ROUTE_CONF_ROUTES 1			//RPL es usado para rutar Ipv6
 #define NETSTACK_CONF_WITH_IPV6      1			//Especifica que ipv6 debe ser usado
 
 #undef UIP_CONF_TCP
-#define UIP_CONF_TCP 1							//Se da soporte a TCP (posible fuente de conflicto)
+#define UIP_CONF_TCP 1											//Se da soporte a TCP (posible fuente de conflicto)
 
 /* Code/RAM footprint savings so that things will fit on our device */
 #undef NBR_TABLE_CONF_MAX_NEIGHBORS
 #undef UIP_CONF_MAX_ROUTES
-#define NBR_TABLE_CONF_MAX_NEIGHBORS  10
-#define UIP_CONF_MAX_ROUTES           10
+#define NBR_TABLE_CONF_MAX_NEIGHBORS  10		//Máximo número de vecinos en tabla de dispositivo
+#define UIP_CONF_MAX_ROUTES           10		//Máximo número de rutas que puede manejar el dispositivo
 #endif /* PROJECT_ROUTER_CONF_H_ */

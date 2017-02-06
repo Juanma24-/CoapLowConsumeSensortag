@@ -34,28 +34,28 @@
 #include "net/ipv6/multicast/uip-mcast6-engines.h"
 
 /* Change this to switch engines. Engine codes in uip-mcast6-engines.h */
-#define UIP_MCAST6_CONF_ENGINE UIP_MCAST6_ENGINE_ROLL_TM
+#define UIP_MCAST6_CONF_ENGINE UIP_MCAST6_ENGINE_ROLL_TM          //Se ha seleccionado el motor ROLL TM
 /* For Imin: Use 16 over NullRDC, 64 over Contiki MAC */
 #define ROLL_TM_CONF_IMIN_1         64
 
 #undef UIP_CONF_IPV6_RPL
 #undef UIP_CONF_ND6_SEND_RA
 #undef UIP_CONF_ROUTER
-#undef NETSTACK_CONF_WITH_IPV6	
+#undef NETSTACK_CONF_WITH_IPV6
 #define UIP_CONF_ND6_SEND_RA         0
 #define UIP_CONF_ROUTER              1			//El nodo actúa como Router
-#define UIP_CONF_IPV6_RPL			 1			//RPL es usado para rutar Ipv6
-#define UIP_MCAST6_ROUTE_CONF_ROUTES 1			//
-#define NETSTACK_CONF_WITH_IPV6      1			//Especifica que ipv6 debe ser usado
+#define UIP_CONF_IPV6_RPL			       1		  //RPL es usado para rutar Ipv6
+#define UIP_MCAST6_ROUTE_CONF_ROUTES 1			//Tamaño de Multicast routing table
+#define NETSTACK_CONF_WITH_IPV6      1			//Especifica: ipv6 debe ser usado
 
 #undef UIP_CONF_TCP
-#define UIP_CONF_TCP 0
+#define UIP_CONF_TCP 0                      //Soporte TCP (desactivado, ahorra memoria)
 
 /* Code/RAM footprint savings so that things will fit on our device */
 #undef NBR_TABLE_CONF_MAX_NEIGHBORS
 #undef UIP_CONF_MAX_ROUTES
-#define NBR_TABLE_CONF_MAX_NEIGHBORS  10
-#define UIP_CONF_MAX_ROUTES           10
+#define NBR_TABLE_CONF_MAX_NEIGHBORS  10    //Máximo número de vecinos en tabla de dispositivo
+#define UIP_CONF_MAX_ROUTES           10    //Máximo número de rutas que puede manejar el dispositivo
 
 /*---------------------------------------------------------------------------*/
 /* Change to match your configuration */
@@ -64,16 +64,17 @@
 /*---------------------------------------------------------------------------*/
 /* Enable the ROM bootloader */
 #define ROM_BOOTLOADER_ENABLE                 1
-#define BOARD_CONF_DEBUGGER_DEVPACK			  1
+#define BOARD_CONF_DEBUGGER_DEVPACK			      1         //Necesario para hacer debugging
 /* Disable button shutdown functionality */
-#define BUTTON_SENSOR_CONF_ENABLE_SHUTDOWN    1
+#define BUTTON_SENSOR_CONF_ENABLE_SHUTDOWN    1         //Importante mantener siempre a 1 (siempre puede ser útil apagar el dispositivo)
 /*---------------------------------------------------------------------------*/
 /* For very sleepy operation */
-#define RF_BLE_CONF_ENABLED                   0
-#define UIP_DS6_CONF_PERIOD        CLOCK_SECOND
-#define RPL_CONF_LEAF_ONLY                    1
+#define RF_BLE_CONF_ENABLED                   0         //Bluetooth desactivado
+#define UIP_DS6_CONF_PERIOD        CLOCK_SECOND         //
+#define RPL_CONF_LEAF_ONLY                    1         //Solo como modo hoja ¿?
 
-#define REST_MAX_CHUNK_SIZE     128
+#define REST_MAX_CHUNK_SIZE     128                     //Tamaño mensaje (pedazo) de motor REST
+                                                        //Sólo potencias de 2
 /*
  * We'll fail without RPL probing, so turn it on explicitly even though it's
  * on by default

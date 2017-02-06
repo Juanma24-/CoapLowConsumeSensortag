@@ -82,11 +82,12 @@ static uip_ds6_maddr_t * group_dir;
 /*---------------------------------------------------------------------------*/
 #define PERIODIC_INTERVAL         CLOCK_SECOND
 /*----------------------------POST_STATUS (SOLO Potencias de 2!!!!!)-----------------------------------------------*/
+/* Son macros para determinar si ha habido una modificación de los parámetros o algún error*/
 #define POST_STATUS_BAD           0x80
 #define POST_STATUS_HAS_MODE      0x40
 #define POST_STATUS_HAS_DURATION  0x20
 #define POST_STATUS_HAS_INTERVAL  0x10
-#define POST_STATUS_NONE          0x00
+#define POST_STATUS_NONE          0x00      //Máscara inicial
 #define POST_STATUS_HAS_CODE      0x01
 #define POST_STATUS_HAS_MASK      0x02
 /*---------------------------Estructura de configuracion------------------------------------------------*/
@@ -104,24 +105,25 @@ sleepy_config_t config;
 #define MASK_DEFAULT      0b00000001      //Máscara de operacion por defecto
 #define MASK_MIN          0b00000001      //Máscara de operacion mínima
 #define MASK_MAX          0b11111111      //Máscara de operacion máxima
+
 typedef struct operation_s {
   uint8_t code;
   uint8_t mask;
 } operation_t;
 
 operation_t operation;
-/*---------------------------------------------------------------------------*/
+/*-----------------------ESTADOS----------------------------------------------*/
 #define STATE_NORMAL           0
 #define STATE_NOTIFY_OBSERVERS 1
 #define STATE_VERY_SLEEPY      2
-/*---------------------------------------------------------------------------*/
-static struct stimer st_duration;
-static struct stimer st_interval;
-static struct stimer st_min_mac_on_duration;
-static struct etimer et_periodic;
-static process_event_t event_new_config;  //Evento de Configuracion
-static process_event_t event_new_op;      //Evento de Operacion
-static uint8_t state;
+/*----------------------------------------------------------------------------*/
+static struct stimer st_duration;               //Timer de duración
+static struct stimer st_interval;               //Timer de intervalo
+static struct stimer st_min_mac_on_duration;    //Timer de mínima duración MAC encendida
+static struct etimer et_periodic;               //Timer de interrupción periodica (1s)
+static process_event_t event_new_config;        //Evento de Configuracion
+static process_event_t event_new_op;            //Evento de Operacion
+static uint8_t state;                           //Variable de estado
 /*---------------------------------------------------------------------------*/
 const char *not_supported_msg = "Supported:text/plain,application/json";
 /*---------------------------------------------------------------------------*/
@@ -132,20 +134,17 @@ AUTOSTART_PROCESSES(&very_sleepy_demo_process);
 static void readings_get_handler(void *request, void *response, uint8_t *buffer,uint16_t preferred_size, int32_t *offset)
 {
   unsigned int accept = -1;
-  //int temp=0;				//Temperatura del Sensor
   int voltage;			//Voltaje
   int tempbat;			//Temperatura de la batería
 
   if(request != NULL) {							//Si se acepta la petición
     REST.get_header_accept(request, &accept);
   }
-
-  tempbat = batmon_sensor.value(BATMON_SENSOR_TYPE_TEMP);	//Obtiene el valor de la temperatura de la batería
-  voltage = batmon_sensor.value(BATMON_SENSOR_TYPE_VOLT);	//Obtiene el valor del voltaje
-  //temp = tmp_007_sensor.value(TMP_007_SENSOR_TYPE_ALL);		//Obtiene el valor de la temperatura
+  tempbat = batmon_sensor.value(BATMON_SENSOR_TYPE_TEMP);	              //Obtiene el valor de la temperatura de la batería
+  voltage = batmon_sensor.value(BATMON_SENSOR_TYPE_VOLT);	              //Obtiene el valor del voltaje
   if(accept == -1 || accept == REST.type.APPLICATION_JSON) {
     REST.set_header_content_type(response, REST.type.APPLICATION_JSON);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"tempbat\":{\"v\":%d,\"u\":\"C\"},\"voltage\":{\"v\":%d,\"u\":\"mV\"}}",tempbat, (voltage * 125) >> 5);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Tempbat\":{\"v\":%d,\"u\":\"C\"},\"Voltage\":{\"v\":%d,\"u\":\"mV\"}}",tempbat, (voltage * 125) >> 5);
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else if(accept == REST.type.TEXT_PLAIN) {
     REST.set_header_content_type(response, REST.type.TEXT_PLAIN);
@@ -170,11 +169,11 @@ static void groupipv6_get_handler(void *request, void *response, uint8_t *buffer
 
   if(accept == -1 || accept == REST.type.APPLICATION_JSON) {
     REST.set_header_content_type(response, REST.type.APPLICATION_JSON);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Group_Dir\":{%lu}",(uint16_t*)group_dir);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Group_Dir\":{%lu}",(uint16_t*)group_dir); //Posible conflicto de tipo
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else if(accept == REST.type.TEXT_PLAIN) {
     REST.set_header_content_type(response, REST.type.TEXT_PLAIN);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "Group_Dir=%lu",(uint16_t*)group_dir);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "Group_Dir=%lu",(uint16_t*)group_dir);        //Posible conflicto de tipo
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else {
     REST.set_response_status(response, REST.status.NOT_ACCEPTABLE);
@@ -302,7 +301,7 @@ static void op_get_handler(void *request, void *response, uint8_t *buffer,uint16
 
   if(accept == -1 || accept == REST.type.APPLICATION_JSON) {
     REST.set_header_content_type(response, REST.type.APPLICATION_JSON);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "{\"Operation\":{\"code\":%u,\"mask\":%u}}",operation.code,operation.mask);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "{\"Operation\":{\"Code\":%u,\"Mask\":%u}}",operation.code,operation.mask);
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else if(accept == REST.type.TEXT_PLAIN) {
     REST.set_header_content_type(response, REST.type.TEXT_PLAIN);
@@ -326,15 +325,15 @@ static void op_post_handler(void *request, void *response, uint8_t *buffer,uint1
 
   rv = REST.get_post_variable(request, "code", &ptr); //Obtiene la variable "code"
   if(rv && rv < 16) {
-    memset(tmp_buf, 0, sizeof(tmp_buf));
-    memcpy(tmp_buf, ptr, rv);
-    rv = atoi(tmp_buf);
+    memset(tmp_buf, 0, sizeof(tmp_buf));  //Reserva espacio para tmp_buf
+    memcpy(tmp_buf, ptr, rv);             //Pasa el valor de la direccion ptr a tmp_buf
+    rv = atoi(tmp_buf);                   //Convierte un String a Entero
 
     code = rv;
-    if(!code) {
-      post_status = POST_STATUS_BAD;
-    } else {
-      post_status |= POST_STATUS_HAS_CODE;
+    if(!code) {                           //Si code==0
+      post_status = POST_STATUS_BAD;      //Fallo en POST
+    } else {                              //Code != 0
+      post_status |= POST_STATUS_HAS_CODE;//Se suma la máscara a post_status
     }
   }
 
@@ -372,7 +371,7 @@ static void op_post_handler(void *request, void *response, uint8_t *buffer,uint1
   process_post(&very_sleepy_demo_process, event_new_op, NULL);
 }
 /*------------Recurso de configuracion operacion---------------------------------------------------------------*/
-RESOURCE(operation_make,"title=\"Operation Make: ""GET|POST operation=<code>&mask=<mask_code>\";rt=\"Control\"",op_get_handler, op_post_handler, NULL, NULL);
+RESOURCE(operation_make,"title=\"Operation Make: ""GET|POST Code=<code>&Mask=<mask_code>\";rt=\"Control\"",op_get_handler, op_post_handler, NULL, NULL);
 /*---------------------------------------------------------------------------*/
 /*
  * If our preferred parent is not NBR_REACHABLE in the ND cache, NUD will send

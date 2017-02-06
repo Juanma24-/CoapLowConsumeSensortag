@@ -43,7 +43,7 @@
 #include "net/rpl/rpl.h"
 #include "net/rpl/rpl-private.h"
 #if RPL_WITH_NON_STORING
-#include "net/rpl/rpl-ns.h"
+  #include "net/rpl/rpl-ns.h"
 #endif /* RPL_WITH_NON_STORING */
 #include "net/netstack.h"
 #include "dev/button-sensor.h"
@@ -66,31 +66,31 @@ PROCESS(border_router_process, "Border router process");
 
 #if WEBSERVER==0
 /* No webserver */
-AUTOSTART_PROCESSES(&border_router_process);
+  AUTOSTART_PROCESSES(&border_router_process);
 #elif WEBSERVER>1
 /* Use an external webserver application */
-#include "webserver-nogui.h"
-AUTOSTART_PROCESSES(&border_router_process,&webserver_nogui_process);
+  #include "webserver-nogui.h"
+  AUTOSTART_PROCESSES(&border_router_process,&webserver_nogui_process);
 #else
 /* Use simple webserver with only one page for minimum footprint.
  * Multiple connections can result in interleaved tcp segments since
  * a single static buffer is used for all segments.
  */
-#include "httpd-simple.h"
+ #include "httpd-simple.h"
 /* The internal webserver can provide additional information if
  * enough program flash is available.
  */
-#define WEBSERVER_CONF_LOADTIME 0
-#define WEBSERVER_CONF_FILESTATS 0
-#define WEBSERVER_CONF_NEIGHBOR_STATUS 0
+ #define WEBSERVER_CONF_LOADTIME 0
+ #define WEBSERVER_CONF_FILESTATS 0
+ #define WEBSERVER_CONF_NEIGHBOR_STATUS 0
 /* Adding links requires a larger RAM buffer. To avoid static allocation
  * the stack can be used for formatting; however tcp retransmissions
  * and multiple connections can result in garbled segments.
  * TODO:use PSOCk_GENERATOR_SEND and tcp state storage to fix this.
  */
-#define WEBSERVER_CONF_ROUTE_LINKS 0
-#if WEBSERVER_CONF_ROUTE_LINKS
-#define BUF_USES_STACK 1
+ #define WEBSERVER_CONF_ROUTE_LINKS 0
+ #if WEBSERVER_CONF_ROUTE_LINKS
+  #define BUF_USES_STACK 1
 #endif
 
 PROCESS(webserver_nogui_process, "Web server");
@@ -112,14 +112,14 @@ AUTOSTART_PROCESSES(&border_router_process,&webserver_nogui_process);
 static const char *TOP = "<html><head><title>ContikiRPL</title></head><body>\n";
 static const char *BOTTOM = "</body></html>\n";
 #if BUF_USES_STACK
-static char *bufptr, *bufend;
-#define ADD(...) do {                                                   \
-    bufptr += snprintf(bufptr, bufend - bufptr, __VA_ARGS__);      \
+  static char *bufptr, *bufend;
+  #define ADD(...) do {                                                   \
+      bufptr += snprintf(bufptr, bufend - bufptr, __VA_ARGS__);      \
   } while(0)
 #else
-static char buf[256];
-static int blen;
-#define ADD(...) do {                                                   \
+  static char buf[256];
+  static int blen;
+  #define ADD(...) do {                                                   \
     blen += snprintf(&buf[blen], sizeof(buf) - blen, __VA_ARGS__);      \
   } while(0)
 #endif
