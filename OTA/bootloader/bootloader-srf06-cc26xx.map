@@ -1,0 +1,1961 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libg.a(lib_a-memcpy.o)
+                              obj_srf06-cc26xx/ota.o (memcpy)
+
+Allocating common symbols
+Common symbol       size              file
+
+driverlib_release_0_44336
+                    0x1               obj_srf06-cc26xx/driverlib_release.o
+g_pControlTable     0x4               obj_srf06-cc26xx/i2s.o
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/bootloader.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/bootloader.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/bootloader.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/ext-flash.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/ext-flash.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/ext-flash.o
+ .text.write_enable
+                0x0000000000000000       0x3e obj_srf06-cc26xx/ext-flash.o
+ .text.ext_flash_write
+                0x0000000000000000       0xe6 obj_srf06-cc26xx/ext-flash.o
+ .text.ext_flash_erase
+                0x0000000000000000       0xd2 obj_srf06-cc26xx/ext-flash.o
+ .text.ext_flash_test
+                0x0000000000000000       0x1e obj_srf06-cc26xx/ext-flash.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/board-spi.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/board-spi.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/board-spi.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/startup_gcc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/startup_gcc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/startup_gcc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/ccfg.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/ccfg.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/ccfg.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/udma.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/udma.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelAttributeEnable
+                0x0000000000000000       0x76 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelAttributeDisable
+                0x0000000000000000       0x76 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelAttributeGet
+                0x0000000000000000       0x82 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelControlSet
+                0x0000000000000000       0x38 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelTransferSet
+                0x0000000000000000       0xf8 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelScatterGatherSet
+                0x0000000000000000       0x86 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelSizeGet
+                0x0000000000000000       0x36 obj_srf06-cc26xx/udma.o
+ .text.NOROM_uDMAChannelModeGet
+                0x0000000000000000       0x42 obj_srf06-cc26xx/udma.o
+ .debug_info    0x0000000000000000      0x3c3 obj_srf06-cc26xx/udma.o
+ .debug_abbrev  0x0000000000000000      0x12f obj_srf06-cc26xx/udma.o
+ .debug_aranges
+                0x0000000000000000       0x58 obj_srf06-cc26xx/udma.o
+ .debug_ranges  0x0000000000000000       0x48 obj_srf06-cc26xx/udma.o
+ .debug_line    0x0000000000000000      0x1db obj_srf06-cc26xx/udma.o
+ .debug_str     0x0000000000000000      0x3d2 obj_srf06-cc26xx/udma.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/udma.o
+ .debug_frame   0x0000000000000000       0xd0 obj_srf06-cc26xx/udma.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/udma.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/ssi.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/ssi.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/ssi.o
+ .text.NOROM_SSIConfigSetExpClk
+                0x0000000000000000       0x94 obj_srf06-cc26xx/ssi.o
+ .text.NOROM_SSIDataPutNonBlocking
+                0x0000000000000000       0x2a obj_srf06-cc26xx/ssi.o
+ .text.NOROM_SSIDataPut
+                0x0000000000000000       0x26 obj_srf06-cc26xx/ssi.o
+ .text.NOROM_SSIDataGet
+                0x0000000000000000       0x26 obj_srf06-cc26xx/ssi.o
+ .text.NOROM_SSIDataGetNonBlocking
+                0x0000000000000000       0x2a obj_srf06-cc26xx/ssi.o
+ .text.NOROM_SSIIntRegister
+                0x0000000000000000       0x38 obj_srf06-cc26xx/ssi.o
+ .text.NOROM_SSIIntUnregister
+                0x0000000000000000       0x34 obj_srf06-cc26xx/ssi.o
+ .debug_info    0x0000000000000000      0x29a obj_srf06-cc26xx/ssi.o
+ .debug_abbrev  0x0000000000000000       0xeb obj_srf06-cc26xx/ssi.o
+ .debug_aranges
+                0x0000000000000000       0x50 obj_srf06-cc26xx/ssi.o
+ .debug_ranges  0x0000000000000000       0x40 obj_srf06-cc26xx/ssi.o
+ .debug_line    0x0000000000000000      0x1e7 obj_srf06-cc26xx/ssi.o
+ .debug_str     0x0000000000000000      0x337 obj_srf06-cc26xx/ssi.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/ssi.o
+ .debug_frame   0x0000000000000000       0xc0 obj_srf06-cc26xx/ssi.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/ssi.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_wuc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_wuc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aux_wuc.o
+ .text.NOROM_AUXWUCClockEnable
+                0x0000000000000000       0x58 obj_srf06-cc26xx/aux_wuc.o
+ .text.NOROM_AUXWUCClockDisable
+                0x0000000000000000       0x6c obj_srf06-cc26xx/aux_wuc.o
+ .text.NOROM_AUXWUCClockStatus
+                0x0000000000000000      0x26c obj_srf06-cc26xx/aux_wuc.o
+ .text.NOROM_AUXWUCPowerCtrl
+                0x0000000000000000       0x48 obj_srf06-cc26xx/aux_wuc.o
+ .debug_info    0x0000000000000000      0x137 obj_srf06-cc26xx/aux_wuc.o
+ .debug_abbrev  0x0000000000000000       0xcc obj_srf06-cc26xx/aux_wuc.o
+ .debug_aranges
+                0x0000000000000000       0x38 obj_srf06-cc26xx/aux_wuc.o
+ .debug_ranges  0x0000000000000000       0x28 obj_srf06-cc26xx/aux_wuc.o
+ .debug_line    0x0000000000000000      0x242 obj_srf06-cc26xx/aux_wuc.o
+ .debug_str     0x0000000000000000      0x284 obj_srf06-cc26xx/aux_wuc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aux_wuc.o
+ .debug_frame   0x0000000000000000       0x70 obj_srf06-cc26xx/aux_wuc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aux_wuc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_smph.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_smph.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aux_smph.o
+ .debug_info    0x0000000000000000       0x64 obj_srf06-cc26xx/aux_smph.o
+ .debug_abbrev  0x0000000000000000       0x26 obj_srf06-cc26xx/aux_smph.o
+ .debug_aranges
+                0x0000000000000000       0x18 obj_srf06-cc26xx/aux_smph.o
+ .debug_line    0x0000000000000000       0x1d obj_srf06-cc26xx/aux_smph.o
+ .debug_str     0x0000000000000000      0x1d4 obj_srf06-cc26xx/aux_smph.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aux_smph.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aux_smph.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/watchdog.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/watchdog.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/watchdog.o
+ .debug_info    0x0000000000000000       0x64 obj_srf06-cc26xx/watchdog.o
+ .debug_abbrev  0x0000000000000000       0x26 obj_srf06-cc26xx/watchdog.o
+ .debug_aranges
+                0x0000000000000000       0x18 obj_srf06-cc26xx/watchdog.o
+ .debug_line    0x0000000000000000       0x1d obj_srf06-cc26xx/watchdog.o
+ .debug_str     0x0000000000000000      0x1d4 obj_srf06-cc26xx/watchdog.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/watchdog.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/watchdog.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/pwr_ctrl.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/pwr_ctrl.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCMcuPowerDownConfig
+                0x0000000000000000       0x28 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCMcuPowerOffConfig
+                0x0000000000000000       0x20 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCMcuWakeUpConfig
+                0x0000000000000000       0x20 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCMcuSRamConfig
+                0x0000000000000000       0x28 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCAuxPowerDownConfig
+                0x0000000000000000       0x28 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCPowerStatusGet
+                0x0000000000000000        0xc obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCShutDownEnable
+                0x0000000000000000       0x24 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCDomainPowerDownEnable
+                0x0000000000000000       0x18 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONWUCJtagPowerOff
+                0x0000000000000000       0x10 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.PRCMMcuPowerOff
+                0x0000000000000000       0x10 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.PRCMMcuUldoConfigure
+                0x0000000000000000       0x14 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.AONIOCFreezeEnable
+                0x0000000000000000       0x10 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.PowerCtrlIOFreezeEnable
+                0x0000000000000000       0x1c obj_srf06-cc26xx/pwr_ctrl.o
+ .text.NOROM_PowerCtrlStateSet
+                0x0000000000000000      0x154 obj_srf06-cc26xx/pwr_ctrl.o
+ .text.NOROM_PowerCtrlSourceSet
+                0x0000000000000000       0x40 obj_srf06-cc26xx/pwr_ctrl.o
+ .debug_info    0x0000000000000000      0x257 obj_srf06-cc26xx/pwr_ctrl.o
+ .debug_abbrev  0x0000000000000000      0x12f obj_srf06-cc26xx/pwr_ctrl.o
+ .debug_aranges
+                0x0000000000000000       0x90 obj_srf06-cc26xx/pwr_ctrl.o
+ .debug_ranges  0x0000000000000000       0x80 obj_srf06-cc26xx/pwr_ctrl.o
+ .debug_line    0x0000000000000000      0x276 obj_srf06-cc26xx/pwr_ctrl.o
+ .debug_str     0x0000000000000000      0x395 obj_srf06-cc26xx/pwr_ctrl.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/pwr_ctrl.o
+ .debug_frame   0x0000000000000000      0x154 obj_srf06-cc26xx/pwr_ctrl.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/pwr_ctrl.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/setup.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/setup.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/setup.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_batmon.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_batmon.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aon_batmon.o
+ .text.AONBatMonTemperatureGetDegC
+                0x0000000000000000       0x48 obj_srf06-cc26xx/aon_batmon.o
+ .debug_info    0x0000000000000000       0xd8 obj_srf06-cc26xx/aon_batmon.o
+ .debug_abbrev  0x0000000000000000       0x60 obj_srf06-cc26xx/aon_batmon.o
+ .debug_aranges
+                0x0000000000000000       0x20 obj_srf06-cc26xx/aon_batmon.o
+ .debug_ranges  0x0000000000000000       0x10 obj_srf06-cc26xx/aon_batmon.o
+ .debug_line    0x0000000000000000       0xda obj_srf06-cc26xx/aon_batmon.o
+ .debug_str     0x0000000000000000      0x23b obj_srf06-cc26xx/aon_batmon.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aon_batmon.o
+ .debug_frame   0x0000000000000000       0x28 obj_srf06-cc26xx/aon_batmon.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aon_batmon.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/prcm.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/prcm.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/prcm.o
+ .text.PRCMAudioClockDisable
+                0x0000000000000000       0x10 obj_srf06-cc26xx/prcm.o
+ .rodata.g_pui32RCGCRegs
+                0x0000000000000000       0x1c obj_srf06-cc26xx/prcm.o
+ .rodata.g_pui32SCGCRegs
+                0x0000000000000000       0x1c obj_srf06-cc26xx/prcm.o
+ .rodata.g_pui32DCGCRegs
+                0x0000000000000000       0x1c obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMInfClockConfigureSet
+                0x0000000000000000       0x74 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMInfClockConfigureGet
+                0x0000000000000000       0x78 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMAudioClockConfigSet
+                0x0000000000000000       0xd0 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMAudioClockConfigSetOverride
+                0x0000000000000000       0x60 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPowerDomainOn
+                0x0000000000000000       0x9c obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPowerDomainOff
+                0x0000000000000000       0x9c obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPeripheralRunEnable
+                0x0000000000000000       0x50 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPeripheralRunDisable
+                0x0000000000000000       0x50 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPeripheralSleepEnable
+                0x0000000000000000       0x50 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPeripheralSleepDisable
+                0x0000000000000000       0x50 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPeripheralDeepSleepEnable
+                0x0000000000000000       0x50 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPeripheralDeepSleepDisable
+                0x0000000000000000       0x50 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMPowerDomainStatus
+                0x0000000000000000       0xd4 obj_srf06-cc26xx/prcm.o
+ .text.NOROM_PRCMDeepSleep
+                0x0000000000000000       0x24 obj_srf06-cc26xx/prcm.o
+ .debug_info    0x0000000000000000      0x3fc obj_srf06-cc26xx/prcm.o
+ .debug_abbrev  0x0000000000000000      0x146 obj_srf06-cc26xx/prcm.o
+ .debug_aranges
+                0x0000000000000000       0x90 obj_srf06-cc26xx/prcm.o
+ .debug_ranges  0x0000000000000000       0x80 obj_srf06-cc26xx/prcm.o
+ .debug_line    0x0000000000000000      0x2f0 obj_srf06-cc26xx/prcm.o
+ .debug_str     0x0000000000000000      0x4a1 obj_srf06-cc26xx/prcm.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/prcm.o
+ .debug_frame   0x0000000000000000      0x170 obj_srf06-cc26xx/prcm.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/prcm.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/osc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/osc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/osc.o
+ .text.AONWUCAuxWakeupEvent
+                0x0000000000000000       0x14 obj_srf06-cc26xx/osc.o
+ .text.AONWUCPowerStatusGet
+                0x0000000000000000        0xc obj_srf06-cc26xx/osc.o
+ .text.OSCHfSourceReady
+                0x0000000000000000       0x24 obj_srf06-cc26xx/osc.o
+ .text.OSCHfSourceSwitch
+                0x0000000000000000       0x10 obj_srf06-cc26xx/osc.o
+ .bss.oscHfGlobals
+                0x0000000000000000       0x14 obj_srf06-cc26xx/osc.o
+ .text.NOROM_OSCInterfaceEnable
+                0x0000000000000000       0x40 obj_srf06-cc26xx/osc.o
+ .text.OSCHF_GetStartupTime
+                0x0000000000000000       0xe8 obj_srf06-cc26xx/osc.o
+ .text.OSCHF_TurnOnXosc
+                0x0000000000000000       0x1c obj_srf06-cc26xx/osc.o
+ .text.OSCHF_AttemptToSwitchToXosc
+                0x0000000000000000       0x7c obj_srf06-cc26xx/osc.o
+ .text.OSCHF_SwitchToRcOscTurnOffXosc
+                0x0000000000000000       0x38 obj_srf06-cc26xx/osc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/ccfgread.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/ccfgread.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/ccfgread.o
+ .debug_info    0x0000000000000000       0x64 obj_srf06-cc26xx/ccfgread.o
+ .debug_abbrev  0x0000000000000000       0x26 obj_srf06-cc26xx/ccfgread.o
+ .debug_aranges
+                0x0000000000000000       0x18 obj_srf06-cc26xx/ccfgread.o
+ .debug_line    0x0000000000000000       0x1d obj_srf06-cc26xx/ccfgread.o
+ .debug_str     0x0000000000000000      0x1d4 obj_srf06-cc26xx/ccfgread.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/ccfgread.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/ccfgread.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/i2c.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/i2c.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/i2c.o
+ .text.I2CMasterEnable
+                0x0000000000000000       0x20 obj_srf06-cc26xx/i2c.o
+ .text.NOROM_I2CMasterInitExpClk
+                0x0000000000000000       0x68 obj_srf06-cc26xx/i2c.o
+ .text.NOROM_I2CMasterErr
+                0x0000000000000000       0x38 obj_srf06-cc26xx/i2c.o
+ .text.NOROM_I2CIntRegister
+                0x0000000000000000       0x2c obj_srf06-cc26xx/i2c.o
+ .text.NOROM_I2CIntUnregister
+                0x0000000000000000       0x28 obj_srf06-cc26xx/i2c.o
+ .debug_info    0x0000000000000000      0x1b6 obj_srf06-cc26xx/i2c.o
+ .debug_abbrev  0x0000000000000000       0xc0 obj_srf06-cc26xx/i2c.o
+ .debug_aranges
+                0x0000000000000000       0x40 obj_srf06-cc26xx/i2c.o
+ .debug_ranges  0x0000000000000000       0x30 obj_srf06-cc26xx/i2c.o
+ .debug_line    0x0000000000000000      0x142 obj_srf06-cc26xx/i2c.o
+ .debug_str     0x0000000000000000      0x29b obj_srf06-cc26xx/i2c.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/i2c.o
+ .debug_frame   0x0000000000000000       0x94 obj_srf06-cc26xx/i2c.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/i2c.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_wuc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_wuc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aon_wuc.o
+ .text.NOROM_AONWUCAuxReset
+                0x0000000000000000       0x20 obj_srf06-cc26xx/aon_wuc.o
+ .text.NOROM_AONWUCRechargeCtrlConfigSet
+                0x0000000000000000      0x140 obj_srf06-cc26xx/aon_wuc.o
+ .text.NOROM_AONWUCOscConfig
+                0x0000000000000000       0x64 obj_srf06-cc26xx/aon_wuc.o
+ .debug_info    0x0000000000000000      0x1a6 obj_srf06-cc26xx/aon_wuc.o
+ .debug_abbrev  0x0000000000000000       0x87 obj_srf06-cc26xx/aon_wuc.o
+ .debug_aranges
+                0x0000000000000000       0x30 obj_srf06-cc26xx/aon_wuc.o
+ .debug_ranges  0x0000000000000000       0x20 obj_srf06-cc26xx/aon_wuc.o
+ .debug_line    0x0000000000000000      0x13d obj_srf06-cc26xx/aon_wuc.o
+ .debug_str     0x0000000000000000      0x2c8 obj_srf06-cc26xx/aon_wuc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aon_wuc.o
+ .debug_frame   0x0000000000000000       0x50 obj_srf06-cc26xx/aon_wuc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aon_wuc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_rtc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_rtc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aon_rtc.o
+ .text.NOROM_AONRTCCurrentCompareValueGet
+                0x0000000000000000       0x34 obj_srf06-cc26xx/aon_rtc.o
+ .text.NOROM_AONRTCCurrent64BitValueGet
+                0x0000000000000000       0x34 obj_srf06-cc26xx/aon_rtc.o
+ .debug_info    0x0000000000000000      0x144 obj_srf06-cc26xx/aon_rtc.o
+ .debug_abbrev  0x0000000000000000       0xa8 obj_srf06-cc26xx/aon_rtc.o
+ .debug_aranges
+                0x0000000000000000       0x28 obj_srf06-cc26xx/aon_rtc.o
+ .debug_ranges  0x0000000000000000       0x18 obj_srf06-cc26xx/aon_rtc.o
+ .debug_line    0x0000000000000000      0x110 obj_srf06-cc26xx/aon_rtc.o
+ .debug_str     0x0000000000000000      0x29f obj_srf06-cc26xx/aon_rtc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aon_rtc.o
+ .debug_frame   0x0000000000000000       0x48 obj_srf06-cc26xx/aon_rtc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aon_rtc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/crypto.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/crypto.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/crypto.o
+ .bss.g_ui32CurrentAesOp
+                0x0000000000000000        0x4 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOAesLoadKey
+                0x0000000000000000       0xf4 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOAesEcb
+                0x0000000000000000      0x104 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOAesEcbStatus
+                0x0000000000000000       0x54 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOCcmAuthEncrypt
+                0x0000000000000000      0x228 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOCcmAuthEncryptStatus
+                0x0000000000000000       0x50 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOCcmAuthEncryptResultGet
+                0x0000000000000000       0x94 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOCcmInvAuthDecrypt
+                0x0000000000000000      0x228 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOCcmInvAuthDecryptStatus
+                0x0000000000000000       0x50 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTOCcmInvAuthDecryptResultGet
+                0x0000000000000000       0xd0 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTODmaEnable
+                0x0000000000000000       0x34 obj_srf06-cc26xx/crypto.o
+ .text.NOROM_CRYPTODmaDisable
+                0x0000000000000000       0x34 obj_srf06-cc26xx/crypto.o
+ .debug_info    0x0000000000000000      0x55c obj_srf06-cc26xx/crypto.o
+ .debug_abbrev  0x0000000000000000      0x12c obj_srf06-cc26xx/crypto.o
+ .debug_aranges
+                0x0000000000000000       0x70 obj_srf06-cc26xx/crypto.o
+ .debug_ranges  0x0000000000000000       0x60 obj_srf06-cc26xx/crypto.o
+ .debug_line    0x0000000000000000      0x311 obj_srf06-cc26xx/crypto.o
+ .debug_str     0x0000000000000000      0x4ae obj_srf06-cc26xx/crypto.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/crypto.o
+ .debug_frame   0x0000000000000000      0x13c obj_srf06-cc26xx/crypto.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/crypto.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/ioc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/ioc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/ioc.o
+ .text.GPIODirModeSet
+                0x0000000000000000       0x38 obj_srf06-cc26xx/ioc.o
+ .rodata.g_pui32IOCfgReg
+                0x0000000000000000       0x80 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPortConfigureSet
+                0x0000000000000000       0x30 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPortConfigureGet
+                0x0000000000000000       0x24 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOShutdownSet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOModeSet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOIntSet
+                0x0000000000000000       0x4c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOPortPullSet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOHystSet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOInputSet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOSlewCtrlSet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIODrvStrengthSet
+                0x0000000000000000       0x40 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIOPortIdSet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIntEnable
+                0x0000000000000000       0x34 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCIntDisable
+                0x0000000000000000       0x34 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeGpioInput
+                0x0000000000000000       0x2c obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeGpioOutput
+                0x0000000000000000       0x2a obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeUart
+                0x0000000000000000       0x64 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeSsiMaster
+                0x0000000000000000       0xc0 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeSsiSlave
+                0x0000000000000000       0xb8 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeI2c
+                0x0000000000000000       0x30 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeSpis
+                0x0000000000000000       0x64 obj_srf06-cc26xx/ioc.o
+ .text.NOROM_IOCPinTypeAux
+                0x0000000000000000       0x1c obj_srf06-cc26xx/ioc.o
+ .debug_info    0x0000000000000000      0x733 obj_srf06-cc26xx/ioc.o
+ .debug_abbrev  0x0000000000000000      0x10c obj_srf06-cc26xx/ioc.o
+ .debug_aranges
+                0x0000000000000000       0xc8 obj_srf06-cc26xx/ioc.o
+ .debug_ranges  0x0000000000000000       0xb8 obj_srf06-cc26xx/ioc.o
+ .debug_line    0x0000000000000000      0x321 obj_srf06-cc26xx/ioc.o
+ .debug_str     0x0000000000000000      0x4ec obj_srf06-cc26xx/ioc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/ioc.o
+ .debug_frame   0x0000000000000000      0x240 obj_srf06-cc26xx/ioc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/ioc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/adi.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/adi.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/adi.o
+ .text.SafeHapiAuxAdiSelect
+                0x0000000000000000       0x50 obj_srf06-cc26xx/adi.o
+ .debug_info    0x0000000000000000       0xe5 obj_srf06-cc26xx/adi.o
+ .debug_abbrev  0x0000000000000000       0x88 obj_srf06-cc26xx/adi.o
+ .debug_aranges
+                0x0000000000000000       0x20 obj_srf06-cc26xx/adi.o
+ .debug_ranges  0x0000000000000000       0x10 obj_srf06-cc26xx/adi.o
+ .debug_line    0x0000000000000000      0x116 obj_srf06-cc26xx/adi.o
+ .debug_str     0x0000000000000000      0x229 obj_srf06-cc26xx/adi.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/adi.o
+ .debug_frame   0x0000000000000000       0x2c obj_srf06-cc26xx/adi.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/adi.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/systick.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/systick.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/systick.o
+ .debug_info    0x0000000000000000       0x64 obj_srf06-cc26xx/systick.o
+ .debug_abbrev  0x0000000000000000       0x26 obj_srf06-cc26xx/systick.o
+ .debug_aranges
+                0x0000000000000000       0x18 obj_srf06-cc26xx/systick.o
+ .debug_line    0x0000000000000000       0x1d obj_srf06-cc26xx/systick.o
+ .debug_str     0x0000000000000000      0x1d3 obj_srf06-cc26xx/systick.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/systick.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/systick.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_ioc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_ioc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aon_ioc.o
+ .text.NOROM_AONIOCDriveStrengthSet
+                0x0000000000000000       0x38 obj_srf06-cc26xx/aon_ioc.o
+ .text.NOROM_AONIOCDriveStrengthGet
+                0x0000000000000000       0x3c obj_srf06-cc26xx/aon_ioc.o
+ .debug_info    0x0000000000000000       0xf4 obj_srf06-cc26xx/aon_ioc.o
+ .debug_abbrev  0x0000000000000000       0x89 obj_srf06-cc26xx/aon_ioc.o
+ .debug_aranges
+                0x0000000000000000       0x28 obj_srf06-cc26xx/aon_ioc.o
+ .debug_ranges  0x0000000000000000       0x18 obj_srf06-cc26xx/aon_ioc.o
+ .debug_line    0x0000000000000000       0xef obj_srf06-cc26xx/aon_ioc.o
+ .debug_str     0x0000000000000000      0x265 obj_srf06-cc26xx/aon_ioc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aon_ioc.o
+ .debug_frame   0x0000000000000000       0x40 obj_srf06-cc26xx/aon_ioc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aon_ioc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/ddi.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/ddi.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/ddi.o
+ .text.NOROM_DDI16BitWrite
+                0x0000000000000000       0x58 obj_srf06-cc26xx/ddi.o
+ .text.NOROM_DDI16BitRead
+                0x0000000000000000       0x50 obj_srf06-cc26xx/ddi.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/flashsafe.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/flashsafe.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/flashsafe.o
+ .text.FlashSectorSizeGet
+                0x0000000000000000       0x1c obj_srf06-cc26xx/flashsafe.o
+ .text.FlashSizeGet
+                0x0000000000000000       0x24 obj_srf06-cc26xx/flashsafe.o
+ .text.FlashIntStatus
+                0x0000000000000000       0x38 obj_srf06-cc26xx/flashsafe.o
+ .text.FlashIntClear
+                0x0000000000000000       0x3c obj_srf06-cc26xx/flashsafe.o
+ .text.SMPHTryAcquire
+                0x0000000000000000       0x26 obj_srf06-cc26xx/flashsafe.o
+ .text.SMPHRelease
+                0x0000000000000000       0x1c obj_srf06-cc26xx/flashsafe.o
+ .text.FlashsafeSMPHTryAcquire
+                0x0000000000000000        0xe obj_srf06-cc26xx/flashsafe.o
+ .text.FlashsafeSMPHRelease
+                0x0000000000000000        0xc obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeSizeGet
+                0x0000000000000000        0xc obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeSectorSizeGet
+                0x0000000000000000        0xc obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafePowerModeSet
+                0x0000000000000000       0x30 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafePowerModeGet
+                0x0000000000000000       0x30 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeProtectionSet
+                0x0000000000000000       0x38 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeProtectionGet
+                0x0000000000000000       0x34 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeProtectionSave
+                0x0000000000000000       0x34 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeCheckFsmForError
+                0x0000000000000000       0x1c obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeCheckFsmForReady
+                0x0000000000000000       0x1c obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeIntRegister
+                0x0000000000000000       0x3c obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeIntUnregister
+                0x0000000000000000       0x30 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeIntEnable
+                0x0000000000000000       0x44 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeIntDisable
+                0x0000000000000000       0x44 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeIntStatus
+                0x0000000000000000        0xc obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeIntClear
+                0x0000000000000000       0x28 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeSectorErase
+                0x0000000000000000       0x2a obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeProgram
+                0x0000000000000000       0x32 obj_srf06-cc26xx/flashsafe.o
+ .text.NOROM_FlashsafeDisableSectorsForWrite
+                0x0000000000000000       0x28 obj_srf06-cc26xx/flashsafe.o
+ .debug_info    0x0000000000000000      0x4b8 obj_srf06-cc26xx/flashsafe.o
+ .debug_abbrev  0x0000000000000000      0x1e7 obj_srf06-cc26xx/flashsafe.o
+ .debug_aranges
+                0x0000000000000000       0xe8 obj_srf06-cc26xx/flashsafe.o
+ .debug_ranges  0x0000000000000000       0xd8 obj_srf06-cc26xx/flashsafe.o
+ .debug_line    0x0000000000000000      0x33e obj_srf06-cc26xx/flashsafe.o
+ .debug_str     0x0000000000000000      0x583 obj_srf06-cc26xx/flashsafe.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/flashsafe.o
+ .debug_frame   0x0000000000000000      0x2a0 obj_srf06-cc26xx/flashsafe.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/flashsafe.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/interrupt.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/interrupt.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/interrupt.o
+ .rodata.g_pui32Priority
+                0x0000000000000000       0x20 obj_srf06-cc26xx/interrupt.o
+ .rodata.g_pui32Regs
+                0x0000000000000000       0x48 obj_srf06-cc26xx/interrupt.o
+ .text.IntDefaultHandler
+                0x0000000000000000        0x2 obj_srf06-cc26xx/interrupt.o
+ vtable_ram     0x0000000000000000       0xc8 obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntRegister
+                0x0000000000000000       0x5c obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntUnregister
+                0x0000000000000000       0x1c obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntPriorityGroupingSet
+                0x0000000000000000       0x28 obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntPriorityGroupingGet
+                0x0000000000000000       0x40 obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntPrioritySet
+                0x0000000000000000       0x64 obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntPriorityGet
+                0x0000000000000000       0x28 obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntEnable
+                0x0000000000000000       0x9c obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntDisable
+                0x0000000000000000       0x9c obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntPendSet
+                0x0000000000000000       0x84 obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntPendGet
+                0x0000000000000000       0x4e obj_srf06-cc26xx/interrupt.o
+ .text.NOROM_IntPendClear
+                0x0000000000000000       0x70 obj_srf06-cc26xx/interrupt.o
+ .debug_info    0x0000000000000000      0x351 obj_srf06-cc26xx/interrupt.o
+ .debug_abbrev  0x0000000000000000      0x11e obj_srf06-cc26xx/interrupt.o
+ .debug_aranges
+                0x0000000000000000       0x78 obj_srf06-cc26xx/interrupt.o
+ .debug_ranges  0x0000000000000000       0x68 obj_srf06-cc26xx/interrupt.o
+ .debug_line    0x0000000000000000      0x279 obj_srf06-cc26xx/interrupt.o
+ .debug_str     0x0000000000000000      0x39b obj_srf06-cc26xx/interrupt.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/interrupt.o
+ .debug_frame   0x0000000000000000      0x128 obj_srf06-cc26xx/interrupt.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/interrupt.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_tdc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_tdc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aux_tdc.o
+ .text.NOROM_AUXTDCConfigSet
+                0x0000000000000000       0x32 obj_srf06-cc26xx/aux_tdc.o
+ .text.NOROM_AUXTDCMeasurementDone
+                0x0000000000000000       0x38 obj_srf06-cc26xx/aux_tdc.o
+ .debug_info    0x0000000000000000      0x102 obj_srf06-cc26xx/aux_tdc.o
+ .debug_abbrev  0x0000000000000000       0x89 obj_srf06-cc26xx/aux_tdc.o
+ .debug_aranges
+                0x0000000000000000       0x28 obj_srf06-cc26xx/aux_tdc.o
+ .debug_ranges  0x0000000000000000       0x18 obj_srf06-cc26xx/aux_tdc.o
+ .debug_line    0x0000000000000000       0xf7 obj_srf06-cc26xx/aux_tdc.o
+ .debug_str     0x0000000000000000      0x25a obj_srf06-cc26xx/aux_tdc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aux_tdc.o
+ .debug_frame   0x0000000000000000       0x40 obj_srf06-cc26xx/aux_tdc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aux_tdc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/uart.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/uart.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTFIFOLevelGet
+                0x0000000000000000       0x2a obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTConfigSetExpClk
+                0x0000000000000000       0x58 obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTConfigGetExpClk
+                0x0000000000000000       0x42 obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTDisable
+                0x0000000000000000       0x42 obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTCharGetNonBlocking
+                0x0000000000000000       0x22 obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTCharGet
+                0x0000000000000000       0x1e obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTCharPutNonBlocking
+                0x0000000000000000       0x2c obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTCharPut
+                0x0000000000000000       0x28 obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTIntRegister
+                0x0000000000000000       0x28 obj_srf06-cc26xx/uart.o
+ .text.NOROM_UARTIntUnregister
+                0x0000000000000000       0x24 obj_srf06-cc26xx/uart.o
+ .debug_info    0x0000000000000000      0x30f obj_srf06-cc26xx/uart.o
+ .debug_abbrev  0x0000000000000000      0x12c obj_srf06-cc26xx/uart.o
+ .debug_aranges
+                0x0000000000000000       0x68 obj_srf06-cc26xx/uart.o
+ .debug_ranges  0x0000000000000000       0x58 obj_srf06-cc26xx/uart.o
+ .debug_line    0x0000000000000000      0x1b0 obj_srf06-cc26xx/uart.o
+ .debug_str     0x0000000000000000      0x385 obj_srf06-cc26xx/uart.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/uart.o
+ .debug_frame   0x0000000000000000      0x10c obj_srf06-cc26xx/uart.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/uart.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/flash.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/flash.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/flash.o
+ .text.FlashSectorSizeGet
+                0x0000000000000000       0x1c obj_srf06-cc26xx/flash.o
+ .text.FlashSizeGet
+                0x0000000000000000       0x24 obj_srf06-cc26xx/flash.o
+ .rodata.g_pui8CcfgDefaultSec
+                0x0000000000000000       0x14 obj_srf06-cc26xx/flash.o
+ .text.NOROM_FlashPowerModeSet
+                0x0000000000000000       0xd0 obj_srf06-cc26xx/flash.o
+ .text.NOROM_FlashPowerModeGet
+                0x0000000000000000       0x34 obj_srf06-cc26xx/flash.o
+ .text.NOROM_FlashProtectionSet
+                0x0000000000000000       0xa4 obj_srf06-cc26xx/flash.o
+ .text.NOROM_FlashProtectionGet
+                0x0000000000000000       0x98 obj_srf06-cc26xx/flash.o
+ .text.NOROM_FlashProtectionSave
+                0x0000000000000000       0x72 obj_srf06-cc26xx/flash.o
+ .text.NOROM_FlashEfuseReadRow
+                0x0000000000000000       0x9c obj_srf06-cc26xx/flash.o
+ .text.NOROM_FlashDisableSectorsForWrite
+                0x0000000000000000       0x4c obj_srf06-cc26xx/flash.o
+ .text.SetReadMode
+                0x0000000000000000      0x17c obj_srf06-cc26xx/flash.o
+ .text.MemBusWrkAroundHapiProgramFlash
+                0x0000000000000000       0x38 obj_srf06-cc26xx/flash.o
+ .text.MemBusWrkAroundHapiEraseSector
+                0x0000000000000000       0x30 obj_srf06-cc26xx/flash.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/smph.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/smph.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/smph.o
+ .text.NOROM_SMPHAcquire
+                0x0000000000000000       0x1e obj_srf06-cc26xx/smph.o
+ .debug_info    0x0000000000000000       0xa2 obj_srf06-cc26xx/smph.o
+ .debug_abbrev  0x0000000000000000       0x5e obj_srf06-cc26xx/smph.o
+ .debug_aranges
+                0x0000000000000000       0x20 obj_srf06-cc26xx/smph.o
+ .debug_ranges  0x0000000000000000       0x10 obj_srf06-cc26xx/smph.o
+ .debug_line    0x0000000000000000       0xd8 obj_srf06-cc26xx/smph.o
+ .debug_str     0x0000000000000000      0x204 obj_srf06-cc26xx/smph.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/smph.o
+ .debug_frame   0x0000000000000000       0x28 obj_srf06-cc26xx/smph.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/smph.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/vims.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/vims.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/vims.o
+ .text.NOROM_VIMSConfigure
+                0x0000000000000000       0x50 obj_srf06-cc26xx/vims.o
+ .text.NOROM_VIMSModeSet
+                0x0000000000000000       0x32 obj_srf06-cc26xx/vims.o
+ .text.NOROM_VIMSModeGet
+                0x0000000000000000       0x24 obj_srf06-cc26xx/vims.o
+ .text.NOROM_VIMSModeSetBlocking
+                0x0000000000000000       0x48 obj_srf06-cc26xx/vims.o
+ .debug_info    0x0000000000000000      0x171 obj_srf06-cc26xx/vims.o
+ .debug_abbrev  0x0000000000000000       0x8b obj_srf06-cc26xx/vims.o
+ .debug_aranges
+                0x0000000000000000       0x38 obj_srf06-cc26xx/vims.o
+ .debug_ranges  0x0000000000000000       0x28 obj_srf06-cc26xx/vims.o
+ .debug_line    0x0000000000000000      0x127 obj_srf06-cc26xx/vims.o
+ .debug_str     0x0000000000000000      0x26c obj_srf06-cc26xx/vims.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/vims.o
+ .debug_frame   0x0000000000000000       0x70 obj_srf06-cc26xx/vims.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/vims.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/gpio.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/gpio.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/gpio.o
+ .debug_info    0x0000000000000000       0x64 obj_srf06-cc26xx/gpio.o
+ .debug_abbrev  0x0000000000000000       0x26 obj_srf06-cc26xx/gpio.o
+ .debug_aranges
+                0x0000000000000000       0x18 obj_srf06-cc26xx/gpio.o
+ .debug_line    0x0000000000000000       0x1d obj_srf06-cc26xx/gpio.o
+ .debug_str     0x0000000000000000      0x1d0 obj_srf06-cc26xx/gpio.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/gpio.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/gpio.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/cpu.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/cpu.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/cpu.o
+ .text.NOROM_CPUprimask
+                0x0000000000000000        0xc obj_srf06-cc26xx/cpu.o
+ .text.NOROM_CPUbasepriGet
+                0x0000000000000000        0xc obj_srf06-cc26xx/cpu.o
+ .text.NOROM_CPUdelay
+                0x0000000000000000        0xa obj_srf06-cc26xx/cpu.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/event.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/event.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/event.o
+ .debug_info    0x0000000000000000       0x64 obj_srf06-cc26xx/event.o
+ .debug_abbrev  0x0000000000000000       0x26 obj_srf06-cc26xx/event.o
+ .debug_aranges
+                0x0000000000000000       0x18 obj_srf06-cc26xx/event.o
+ .debug_line    0x0000000000000000       0x1d obj_srf06-cc26xx/event.o
+ .debug_str     0x0000000000000000      0x1d1 obj_srf06-cc26xx/event.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/event.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/event.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_event.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aon_event.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aon_event.o
+ .text.NOROM_AONEventMcuWakeUpSet
+                0x0000000000000000       0x90 obj_srf06-cc26xx/aon_event.o
+ .text.NOROM_AONEventMcuWakeUpGet
+                0x0000000000000000       0x54 obj_srf06-cc26xx/aon_event.o
+ .text.NOROM_AONEventAuxWakeUpSet
+                0x0000000000000000       0x74 obj_srf06-cc26xx/aon_event.o
+ .text.NOROM_AONEventAuxWakeUpGet
+                0x0000000000000000       0x44 obj_srf06-cc26xx/aon_event.o
+ .text.NOROM_AONEventMcuSet
+                0x0000000000000000       0x74 obj_srf06-cc26xx/aon_event.o
+ .text.NOROM_AONEventMcuGet
+                0x0000000000000000       0x44 obj_srf06-cc26xx/aon_event.o
+ .debug_info    0x0000000000000000      0x1e3 obj_srf06-cc26xx/aon_event.o
+ .debug_abbrev  0x0000000000000000       0xdd obj_srf06-cc26xx/aon_event.o
+ .debug_aranges
+                0x0000000000000000       0x48 obj_srf06-cc26xx/aon_event.o
+ .debug_ranges  0x0000000000000000       0x38 obj_srf06-cc26xx/aon_event.o
+ .debug_line    0x0000000000000000      0x173 obj_srf06-cc26xx/aon_event.o
+ .debug_str     0x0000000000000000      0x2c0 obj_srf06-cc26xx/aon_event.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aon_event.o
+ .debug_frame   0x0000000000000000       0xa0 obj_srf06-cc26xx/aon_event.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aon_event.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/trng.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/trng.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/trng.o
+ .text.NOROM_TRNGConfigure
+                0x0000000000000000       0x5c obj_srf06-cc26xx/trng.o
+ .text.NOROM_TRNGNumberGet
+                0x0000000000000000       0x34 obj_srf06-cc26xx/trng.o
+ .debug_info    0x0000000000000000      0x102 obj_srf06-cc26xx/trng.o
+ .debug_abbrev  0x0000000000000000       0x89 obj_srf06-cc26xx/trng.o
+ .debug_aranges
+                0x0000000000000000       0x28 obj_srf06-cc26xx/trng.o
+ .debug_ranges  0x0000000000000000       0x18 obj_srf06-cc26xx/trng.o
+ .debug_line    0x0000000000000000       0xf2 obj_srf06-cc26xx/trng.o
+ .debug_str     0x0000000000000000      0x270 obj_srf06-cc26xx/trng.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/trng.o
+ .debug_frame   0x0000000000000000       0x40 obj_srf06-cc26xx/trng.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/trng.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_timer.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_timer.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aux_timer.o
+ .text.NOROM_AUXTimerConfigure
+                0x0000000000000000       0xf4 obj_srf06-cc26xx/aux_timer.o
+ .text.NOROM_AUXTimerStart
+                0x0000000000000000       0x30 obj_srf06-cc26xx/aux_timer.o
+ .text.NOROM_AUXTimerStop
+                0x0000000000000000       0x30 obj_srf06-cc26xx/aux_timer.o
+ .text.NOROM_AUXTimerPrescaleSet
+                0x0000000000000000       0x64 obj_srf06-cc26xx/aux_timer.o
+ .text.NOROM_AUXTimerPrescaleGet
+                0x0000000000000000       0x34 obj_srf06-cc26xx/aux_timer.o
+ .debug_info    0x0000000000000000      0x192 obj_srf06-cc26xx/aux_timer.o
+ .debug_abbrev  0x0000000000000000       0xdb obj_srf06-cc26xx/aux_timer.o
+ .debug_aranges
+                0x0000000000000000       0x40 obj_srf06-cc26xx/aux_timer.o
+ .debug_ranges  0x0000000000000000       0x30 obj_srf06-cc26xx/aux_timer.o
+ .debug_line    0x0000000000000000      0x153 obj_srf06-cc26xx/aux_timer.o
+ .debug_str     0x0000000000000000      0x289 obj_srf06-cc26xx/aux_timer.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aux_timer.o
+ .debug_frame   0x0000000000000000       0x88 obj_srf06-cc26xx/aux_timer.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aux_timer.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/i2s.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/i2s.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SEnable
+                0x0000000000000000       0x54 obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SAudioFormatConfigure
+                0x0000000000000000       0x38 obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SChannelConfigure
+                0x0000000000000000      0x18c obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SBufferConfig
+                0x0000000000000000       0x3c obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SPointerSet
+                0x0000000000000000       0x30 obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SPointerUpdate
+                0x0000000000000000       0xd0 obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SSampleStampConfigure
+                0x0000000000000000       0x60 obj_srf06-cc26xx/i2s.o
+ .text.NOROM_I2SSampleStampGet
+                0x0000000000000000       0x50 obj_srf06-cc26xx/i2s.o
+ .debug_info    0x0000000000000000      0x3df obj_srf06-cc26xx/i2s.o
+ .debug_abbrev  0x0000000000000000      0x125 obj_srf06-cc26xx/i2s.o
+ .debug_aranges
+                0x0000000000000000       0x58 obj_srf06-cc26xx/i2s.o
+ .debug_ranges  0x0000000000000000       0x48 obj_srf06-cc26xx/i2s.o
+ .debug_line    0x0000000000000000      0x20a obj_srf06-cc26xx/i2s.o
+ .debug_str     0x0000000000000000      0x47b obj_srf06-cc26xx/i2s.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/i2s.o
+ .debug_frame   0x0000000000000000       0xd0 obj_srf06-cc26xx/i2s.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/i2s.o
+ COMMON         0x0000000000000000        0x4 obj_srf06-cc26xx/i2s.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/sys_ctrl.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/sys_ctrl.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/sys_ctrl.o
+ .text.AONWUCAuxWakeupEvent
+                0x0000000000000000       0x14 obj_srf06-cc26xx/sys_ctrl.o
+ .text.AONWUCPowerStatusGet
+                0x0000000000000000        0xc obj_srf06-cc26xx/sys_ctrl.o
+ .text.OSCHfSourceSwitch
+                0x0000000000000000       0x10 obj_srf06-cc26xx/sys_ctrl.o
+ .text.OSCInterfaceDisable
+                0x0000000000000000       0x1c obj_srf06-cc26xx/sys_ctrl.o
+ .text.PRCMLoadSet
+                0x0000000000000000       0x10 obj_srf06-cc26xx/sys_ctrl.o
+ .text.PRCMLoadGet
+                0x0000000000000000       0x1c obj_srf06-cc26xx/sys_ctrl.o
+ .text.PRCMDomainEnable
+                0x0000000000000000       0x34 obj_srf06-cc26xx/sys_ctrl.o
+ .bss.powerQualGlobals
+                0x0000000000000000        0x8 obj_srf06-cc26xx/sys_ctrl.o
+ .rodata.g_pui32ModuleCG
+                0x0000000000000000       0x34 obj_srf06-cc26xx/sys_ctrl.o
+ .text.NOROM_SysCtrlPowerEverything
+                0x0000000000000000      0x13c obj_srf06-cc26xx/sys_ctrl.o
+ .text.NOROM_SysCtrlStandby
+                0x0000000000000000       0x1c obj_srf06-cc26xx/sys_ctrl.o
+ .text.NOROM_SysCtrlPowerdown
+                0x0000000000000000       0x34 obj_srf06-cc26xx/sys_ctrl.o
+ .text.NOROM_SysCtrlShutdown
+                0x0000000000000000       0x34 obj_srf06-cc26xx/sys_ctrl.o
+ .text.SysCtrlSetRechargeBeforePowerDown
+                0x0000000000000000      0x284 obj_srf06-cc26xx/sys_ctrl.o
+ .text.SysCtrlAdjustRechargeAfterPowerDown
+                0x0000000000000000       0xb0 obj_srf06-cc26xx/sys_ctrl.o
+ .text.SysCtrl_DCDC_VoltageConditionalControl
+                0x0000000000000000       0xb8 obj_srf06-cc26xx/sys_ctrl.o
+ .text.NOROM_SysCtrlResetSourceGet
+                0x0000000000000000       0x24 obj_srf06-cc26xx/sys_ctrl.o
+ .debug_info    0x0000000000000000      0x6d9 obj_srf06-cc26xx/sys_ctrl.o
+ .debug_abbrev  0x0000000000000000      0x1e6 obj_srf06-cc26xx/sys_ctrl.o
+ .debug_aranges
+                0x0000000000000000       0x90 obj_srf06-cc26xx/sys_ctrl.o
+ .debug_ranges  0x0000000000000000       0x80 obj_srf06-cc26xx/sys_ctrl.o
+ .debug_line    0x0000000000000000      0x31b obj_srf06-cc26xx/sys_ctrl.o
+ .debug_str     0x0000000000000000      0x754 obj_srf06-cc26xx/sys_ctrl.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/sys_ctrl.o
+ .debug_frame   0x0000000000000000      0x168 obj_srf06-cc26xx/sys_ctrl.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/sys_ctrl.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_adc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/aux_adc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/aux_adc.o
+ .text.AuxAdiDdiSafeWrite
+                0x0000000000000000       0x6c obj_srf06-cc26xx/aux_adc.o
+ .text.ADI8BitsSet
+                0x0000000000000000       0x50 obj_srf06-cc26xx/aux_adc.o
+ .text.ADI8BitsClear
+                0x0000000000000000       0x50 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCDisable
+                0x0000000000000000       0x3c obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCEnableAsync
+                0x0000000000000000       0x7c obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCEnableSync
+                0x0000000000000000       0xa4 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCDisableInputScaling
+                0x0000000000000000       0x14 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCFlushFifo
+                0x0000000000000000       0x20 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCReadFifo
+                0x0000000000000000       0x20 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCPopFifo
+                0x0000000000000000        0xc obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCGetAdjustmentGain
+                0x0000000000000000       0x2c obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCGetAdjustmentOffset
+                0x0000000000000000       0x2c obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCValueToMicrovolts
+                0x0000000000000000       0x30 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCMicrovoltsToValue
+                0x0000000000000000       0x30 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCAdjustValueForGainAndOffset
+                0x0000000000000000       0x46 obj_srf06-cc26xx/aux_adc.o
+ .text.NOROM_AUXADCUnadjustValueForGainAndOffset
+                0x0000000000000000       0x42 obj_srf06-cc26xx/aux_adc.o
+ .debug_info    0x0000000000000000      0x420 obj_srf06-cc26xx/aux_adc.o
+ .debug_abbrev  0x0000000000000000      0x13f obj_srf06-cc26xx/aux_adc.o
+ .debug_aranges
+                0x0000000000000000       0x98 obj_srf06-cc26xx/aux_adc.o
+ .debug_ranges  0x0000000000000000       0x88 obj_srf06-cc26xx/aux_adc.o
+ .debug_line    0x0000000000000000      0x274 obj_srf06-cc26xx/aux_adc.o
+ .debug_str     0x0000000000000000      0x469 obj_srf06-cc26xx/aux_adc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/aux_adc.o
+ .debug_frame   0x0000000000000000      0x18c obj_srf06-cc26xx/aux_adc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/aux_adc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/chipinfo.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/chipinfo.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/chipinfo.o
+ .text.ChipInfo_GetSupportedProtocol_BV
+                0x0000000000000000       0x14 obj_srf06-cc26xx/chipinfo.o
+ .text.ChipInfo_GetPackageType
+                0x0000000000000000       0x34 obj_srf06-cc26xx/chipinfo.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/driverlib_release.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/driverlib_release.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/driverlib_release.o
+ .debug_info    0x0000000000000000       0x9c obj_srf06-cc26xx/driverlib_release.o
+ .debug_abbrev  0x0000000000000000       0x5f obj_srf06-cc26xx/driverlib_release.o
+ .debug_aranges
+                0x0000000000000000       0x18 obj_srf06-cc26xx/driverlib_release.o
+ .debug_line    0x0000000000000000       0xe2 obj_srf06-cc26xx/driverlib_release.o
+ .debug_str     0x0000000000000000      0x209 obj_srf06-cc26xx/driverlib_release.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/driverlib_release.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/driverlib_release.o
+ COMMON         0x0000000000000000        0x1 obj_srf06-cc26xx/driverlib_release.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/timer.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/timer.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/timer.o
+ .text.TimerIntNumberGet
+                0x0000000000000000       0x5c obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerConfigure
+                0x0000000000000000       0x4c obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerLevelControl
+                0x0000000000000000       0x44 obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerStallControl
+                0x0000000000000000       0x44 obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerWaitOnTriggerControl
+                0x0000000000000000       0x80 obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerIntRegister
+                0x0000000000000000       0x64 obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerIntUnregister
+                0x0000000000000000       0x5c obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerMatchUpdateMode
+                0x0000000000000000       0x78 obj_srf06-cc26xx/timer.o
+ .text.NOROM_TimerIntervalLoadMode
+                0x0000000000000000       0x78 obj_srf06-cc26xx/timer.o
+ .debug_info    0x0000000000000000      0x2d3 obj_srf06-cc26xx/timer.o
+ .debug_abbrev  0x0000000000000000       0xe9 obj_srf06-cc26xx/timer.o
+ .debug_aranges
+                0x0000000000000000       0x60 obj_srf06-cc26xx/timer.o
+ .debug_ranges  0x0000000000000000       0x50 obj_srf06-cc26xx/timer.o
+ .debug_line    0x0000000000000000      0x1ce obj_srf06-cc26xx/timer.o
+ .debug_str     0x0000000000000000      0x318 obj_srf06-cc26xx/timer.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/timer.o
+ .debug_frame   0x0000000000000000       0xf0 obj_srf06-cc26xx/timer.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/timer.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/rfc.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/rfc.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/rfc.o
+ .text.NOROM_RFCCpeIntGetAndClear
+                0x0000000000000000       0x24 obj_srf06-cc26xx/rfc.o
+ .debug_info    0x0000000000000000       0xa6 obj_srf06-cc26xx/rfc.o
+ .debug_abbrev  0x0000000000000000       0x60 obj_srf06-cc26xx/rfc.o
+ .debug_aranges
+                0x0000000000000000       0x20 obj_srf06-cc26xx/rfc.o
+ .debug_ranges  0x0000000000000000       0x10 obj_srf06-cc26xx/rfc.o
+ .debug_line    0x0000000000000000       0xd9 obj_srf06-cc26xx/rfc.o
+ .debug_str     0x0000000000000000      0x206 obj_srf06-cc26xx/rfc.o
+ .comment       0x0000000000000000       0x6f obj_srf06-cc26xx/rfc.o
+ .debug_frame   0x0000000000000000       0x28 obj_srf06-cc26xx/rfc.o
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/rfc.o
+ .text          0x0000000000000000        0x0 obj_srf06-cc26xx/ota.o
+ .data          0x0000000000000000        0x0 obj_srf06-cc26xx/ota.o
+ .bss           0x0000000000000000        0x0 obj_srf06-cc26xx/ota.o
+ .text.print_metadata
+                0x0000000000000000        0xa obj_srf06-cc26xx/ota.o
+ .text.overwrite_ota_slot_metadata
+                0x0000000000000000      0x158 obj_srf06-cc26xx/ota.o
+ .text.backup_golden_image
+                0x0000000000000000       0x9a obj_srf06-cc26xx/ota.o
+ .text.verify_ota_slot
+                0x0000000000000000      0x124 obj_srf06-cc26xx/ota.o
+ .text.find_matching_ota_slot
+                0x0000000000000000       0x6a obj_srf06-cc26xx/ota.o
+ .text.find_empty_ota_slot
+                0x0000000000000000       0x52 obj_srf06-cc26xx/ota.o
+ .text.find_oldest_ota_image
+                0x0000000000000000       0x86 obj_srf06-cc26xx/ota.o
+ .text.erase_extflash_page
+                0x0000000000000000       0x46 obj_srf06-cc26xx/ota.o
+ .text.erase_ota_image
+                0x0000000000000000       0x60 obj_srf06-cc26xx/ota.o
+ .text.store_firmware_data
+                0x0000000000000000       0x4e obj_srf06-cc26xx/ota.o
+ .text          0x0000000000000000       0xec /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libg.a(lib_a-memcpy.o)
+ .data          0x0000000000000000        0x0 /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libg.a(lib_a-memcpy.o)
+ .bss           0x0000000000000000        0x0 /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libg.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x0000000000000000       0x1b /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libg.a(lib_a-memcpy.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000000000000 0x0000000000002000 xr
+FLASH_CCFG       0x000000000001ffa8 0x0000000000000058 xr
+SRAM             0x0000000020000000 0x0000000000005000 xrw
+GPRAM            0x0000000011000000 0x0000000000002000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD obj_srf06-cc26xx/bootloader.o
+LOAD obj_srf06-cc26xx/ext-flash.o
+LOAD obj_srf06-cc26xx/board-spi.o
+LOAD obj_srf06-cc26xx/startup_gcc.o
+LOAD obj_srf06-cc26xx/ccfg.o
+LOAD obj_srf06-cc26xx/udma.o
+LOAD obj_srf06-cc26xx/ssi.o
+LOAD obj_srf06-cc26xx/aux_wuc.o
+LOAD obj_srf06-cc26xx/aux_smph.o
+LOAD obj_srf06-cc26xx/watchdog.o
+LOAD obj_srf06-cc26xx/pwr_ctrl.o
+LOAD obj_srf06-cc26xx/setup.o
+LOAD obj_srf06-cc26xx/aon_batmon.o
+LOAD obj_srf06-cc26xx/prcm.o
+LOAD obj_srf06-cc26xx/osc.o
+LOAD obj_srf06-cc26xx/ccfgread.o
+LOAD obj_srf06-cc26xx/i2c.o
+LOAD obj_srf06-cc26xx/aon_wuc.o
+LOAD obj_srf06-cc26xx/aon_rtc.o
+LOAD obj_srf06-cc26xx/crypto.o
+LOAD obj_srf06-cc26xx/ioc.o
+LOAD obj_srf06-cc26xx/adi.o
+LOAD obj_srf06-cc26xx/systick.o
+LOAD obj_srf06-cc26xx/aon_ioc.o
+LOAD obj_srf06-cc26xx/ddi.o
+LOAD obj_srf06-cc26xx/flashsafe.o
+LOAD obj_srf06-cc26xx/interrupt.o
+LOAD obj_srf06-cc26xx/aux_tdc.o
+LOAD obj_srf06-cc26xx/uart.o
+LOAD obj_srf06-cc26xx/flash.o
+LOAD obj_srf06-cc26xx/smph.o
+LOAD obj_srf06-cc26xx/vims.o
+LOAD obj_srf06-cc26xx/gpio.o
+LOAD obj_srf06-cc26xx/cpu.o
+LOAD obj_srf06-cc26xx/event.o
+LOAD obj_srf06-cc26xx/aon_event.o
+LOAD obj_srf06-cc26xx/trng.o
+LOAD obj_srf06-cc26xx/aux_timer.o
+LOAD obj_srf06-cc26xx/i2s.o
+LOAD obj_srf06-cc26xx/sys_ctrl.o
+LOAD obj_srf06-cc26xx/aux_adc.o
+LOAD obj_srf06-cc26xx/chipinfo.o
+LOAD obj_srf06-cc26xx/driverlib_release.o
+LOAD obj_srf06-cc26xx/timer.o
+LOAD obj_srf06-cc26xx/rfc.o
+LOAD obj_srf06-cc26xx/ota.o
+LOAD /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libm.a
+START GROUP
+LOAD /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/thumb/v7-m/libgcc.a
+LOAD /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libg.a
+LOAD /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a
+END GROUP
+                0x0000000020005000                _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
+                0x0000000000000000                _Min_Heap_Size = 0x0
+                0x0000000000000100                _Min_Stack_Size = 0x100
+
+.text           0x0000000000000000     0x1a9c
+                0x0000000000000000                _text = .
+ *(SORT(.vectors))
+ .vectors       0x0000000000000000       0xc8 obj_srf06-cc26xx/startup_gcc.o
+                0x0000000000000000                gVectors
+ *(SORT(.text*))
+ .text.PRCMLoadSet
+                0x00000000000000c8       0x10 obj_srf06-cc26xx/bootloader.o
+ .text.PRCMLoadGet
+                0x00000000000000d8       0x1c obj_srf06-cc26xx/bootloader.o
+ .text.SysCtrlSystemReset
+                0x00000000000000f4       0x14 obj_srf06-cc26xx/bootloader.o
+ .text.power_domains_on
+                0x0000000000000108       0x2c obj_srf06-cc26xx/bootloader.o
+ .text.initialize_peripherals
+                0x0000000000000134       0x58 obj_srf06-cc26xx/bootloader.o
+                0x0000000000000134                initialize_peripherals
+ .text.GPIOPinWrite
+                0x000000000000018c       0x2c obj_srf06-cc26xx/ext-flash.o
+ .text.verify_part
+                0x00000000000001b8       0xa4 obj_srf06-cc26xx/ext-flash.o
+ .text.ext_flash_open
+                0x000000000000025c       0x3c obj_srf06-cc26xx/ext-flash.o
+                0x000000000000025c                ext_flash_open
+ .text.PRCMLoadSet
+                0x0000000000000298       0x10 obj_srf06-cc26xx/board-spi.o
+ .text.PRCMLoadGet
+                0x00000000000002a8       0x1c obj_srf06-cc26xx/board-spi.o
+ .text.SysCtrlClockGet
+                0x00000000000002c4        0xc obj_srf06-cc26xx/board-spi.o
+ .text.accessible
+                0x00000000000002d0       0x38 obj_srf06-cc26xx/board-spi.o
+ .text.board_spi_write
+                0x0000000000000308       0x64 obj_srf06-cc26xx/board-spi.o
+                0x0000000000000308                board_spi_write
+ .text.board_spi_read
+                0x000000000000036c       0x70 obj_srf06-cc26xx/board-spi.o
+                0x000000000000036c                board_spi_read
+ .text.board_spi_flush
+                0x00000000000003dc       0x3c obj_srf06-cc26xx/board-spi.o
+                0x00000000000003dc                board_spi_flush
+ .text.board_spi_open
+                0x0000000000000418       0xd0 obj_srf06-cc26xx/board-spi.o
+                0x0000000000000418                board_spi_open
+ .text.board_spi_close
+                0x00000000000004e8       0x88 obj_srf06-cc26xx/board-spi.o
+                0x00000000000004e8                board_spi_close
+ .text.ResetISR
+                0x0000000000000570       0x60 obj_srf06-cc26xx/startup_gcc.o
+                0x0000000000000570                ResetISR
+ .text.AuxAdiDdiSafeWrite
+                0x00000000000005d0       0x6c obj_srf06-cc26xx/setup.o
+ .text.AONWUCJtagPowerOff
+                0x000000000000063c       0x10 obj_srf06-cc26xx/setup.o
+ .text.SysCtrlAonSync
+                0x000000000000064c        0xc obj_srf06-cc26xx/setup.o
+ .text.SetupCacheModeAccordingToCcfgSetting
+                0x0000000000000658       0x84 obj_srf06-cc26xx/setup.o
+ .text.trimDevice
+                0x00000000000006dc       0xe4 obj_srf06-cc26xx/setup.o
+                0x00000000000006dc                trimDevice
+ .text.SetAonRtcSubSecInc
+                0x00000000000007c0       0x44 obj_srf06-cc26xx/setup.o
+ .text.HapiTrimDeviceShutDown
+                0x0000000000000804      0x320 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForAnabypassValue1
+                0x0000000000000b24       0xbc obj_srf06-cc26xx/setup.o
+ .text.GetTrimForRcOscLfRtuneCtuneTrim
+                0x0000000000000be0       0x28 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForXoscHfIbiastherm
+                0x0000000000000c08       0x18 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForAmpcompTh2
+                0x0000000000000c20       0x40 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForAmpcompTh1
+                0x0000000000000c60       0x40 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForAmpcompCtrl
+                0x0000000000000ca0       0xd8 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForDblrLoopFilterResetVoltage
+                0x0000000000000d78       0x28 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForAdcShModeEn
+                0x0000000000000da0       0x28 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForAdcShVbufEn
+                0x0000000000000dc8       0x28 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForXoscHfCtl
+                0x0000000000000df0       0x4c obj_srf06-cc26xx/setup.o
+ .text.GetTrimForXoscHfFastStart
+                0x0000000000000e3c       0x1c obj_srf06-cc26xx/setup.o
+ .text.GetTrimForRadcExtCfg
+                0x0000000000000e58       0x48 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForRcOscLfIBiasTrim
+                0x0000000000000ea0       0x28 obj_srf06-cc26xx/setup.o
+ .text.GetTrimForXoscLfRegulatorAndCmirrwrRatio
+                0x0000000000000ec8       0x28 obj_srf06-cc26xx/setup.o
+ .text.NOROM_OSCClockSourceSet
+                0x0000000000000ef0       0x68 obj_srf06-cc26xx/osc.o
+                0x0000000000000ef0                NOROM_OSCClockSourceSet
+ .text.NOROM_OSCClockSourceGet
+                0x0000000000000f58       0x40 obj_srf06-cc26xx/osc.o
+                0x0000000000000f58                NOROM_OSCClockSourceGet
+ .text.AuxAdiDdiSafeWrite
+                0x0000000000000f98       0x6c obj_srf06-cc26xx/ddi.o
+ .text.AuxAdiDdiSafeRead
+                0x0000000000001004       0x6c obj_srf06-cc26xx/ddi.o
+ .text.NOROM_FlashSectorErase
+                0x0000000000001070       0x30 obj_srf06-cc26xx/flash.o
+                0x0000000000001070                NOROM_FlashSectorErase
+ .text.NOROM_FlashProgram
+                0x00000000000010a0       0x38 obj_srf06-cc26xx/flash.o
+                0x00000000000010a0                NOROM_FlashProgram
+ .text.ChipInfo_GetDeviceIdHwRevCode
+                0x00000000000010d8       0x10 obj_srf06-cc26xx/chipinfo.o
+ .text.ChipInfo_GetMinorHwRev
+                0x00000000000010e8       0x20 obj_srf06-cc26xx/chipinfo.o
+ .text.ChipInfo_GetChipFamily
+                0x0000000000001108       0x54 obj_srf06-cc26xx/chipinfo.o
+                0x0000000000001108                ChipInfo_GetChipFamily
+ .text.ChipInfo_GetHwRevision
+                0x000000000000115c       0xcc obj_srf06-cc26xx/chipinfo.o
+                0x000000000000115c                ChipInfo_GetHwRevision
+ .text.get_ota_slot_metadata
+                0x0000000000001228       0x74 obj_srf06-cc26xx/ota.o
+                0x0000000000001228                get_ota_slot_metadata
+ .text.update_firmware
+                0x000000000000129c       0x78 obj_srf06-cc26xx/ota.o
+                0x000000000000129c                update_firmware
+ .text.IntMasterEnable
+                0x0000000000001314       0x16 obj_srf06-cc26xx/bootloader.o
+ .text.IntMasterDisable
+                0x000000000000132a       0x16 obj_srf06-cc26xx/bootloader.o
+ .text.main     0x0000000000001340       0x8c obj_srf06-cc26xx/bootloader.o
+                0x0000000000001340                main
+ .text.select_on_bus
+                0x00000000000013cc       0x10 obj_srf06-cc26xx/ext-flash.o
+ .text.deselect
+                0x00000000000013dc       0x10 obj_srf06-cc26xx/ext-flash.o
+ .text.wait_ready
+                0x00000000000013ec       0x7a obj_srf06-cc26xx/ext-flash.o
+ .text.power_down
+                0x0000000000001466       0x64 obj_srf06-cc26xx/ext-flash.o
+ .text.power_standby
+                0x00000000000014ca       0x42 obj_srf06-cc26xx/ext-flash.o
+ .text.ext_flash_close
+                0x000000000000150c        0xe obj_srf06-cc26xx/ext-flash.o
+                0x000000000000150c                ext_flash_close
+ .text.ext_flash_read
+                0x000000000000151a       0x88 obj_srf06-cc26xx/ext-flash.o
+                0x000000000000151a                ext_flash_read
+ .text.ext_flash_init
+                0x00000000000015a2        0xe obj_srf06-cc26xx/ext-flash.o
+                0x00000000000015a2                ext_flash_init
+ .text.SSIEnable
+                0x00000000000015b0       0x1c obj_srf06-cc26xx/board-spi.o
+ .text.SSIIntDisable
+                0x00000000000015cc       0x20 obj_srf06-cc26xx/board-spi.o
+ .text.SSIIntClear
+                0x00000000000015ec       0x16 obj_srf06-cc26xx/board-spi.o
+ .text.NmiSRHandler
+                0x0000000000001602        0x2 obj_srf06-cc26xx/startup_gcc.o
+                0x0000000000001602                NmiSR
+ .text.FaultISRHandler
+                0x0000000000001604        0x2 obj_srf06-cc26xx/startup_gcc.o
+                0x0000000000001604                FaultISR
+ .text.IntDefaultHandler
+                0x0000000000001606        0x2 obj_srf06-cc26xx/startup_gcc.o
+                0x0000000000001606                TRNGIntHandler
+                0x0000000000001606                SSI0IntHandler
+                0x0000000000001606                SWEvent0IntHandler
+                0x0000000000001606                uDMAIntHandler
+                0x0000000000001606                WatchdogIntHandler
+                0x0000000000001606                RFCHardwareIntHandler
+                0x0000000000001606                Timer1BIntHandler
+                0x0000000000001606                I2SIntHandler
+                0x0000000000001606                Timer2BIntHandler
+                0x0000000000001606                Timer2AIntHandler
+                0x0000000000001606                Timer1AIntHandler
+                0x0000000000001606                UART0IntHandler
+                0x0000000000001606                GPIOIntHandler
+                0x0000000000001606                AONIntHandler
+                0x0000000000001606                AUXSWEvent0IntHandler
+                0x0000000000001606                AUXADCIntHandler
+                0x0000000000001606                PendSVIntHandler
+                0x0000000000001606                RFCCPE1IntHandler
+                0x0000000000001606                AUXSWEvent1IntHandler
+                0x0000000000001606                SVCallIntHandler
+                0x0000000000001606                MPUFaultIntHandler
+                0x0000000000001606                SysTickIntHandler
+                0x0000000000001606                BusFaultIntHandler
+                0x0000000000001606                AONProgIntHandler
+                0x0000000000001606                AUXCompAIntHandler
+                0x0000000000001606                SSI1IntHandler
+                0x0000000000001606                FlashIntHandler
+                0x0000000000001606                uDMAErrIntHandler
+                0x0000000000001606                UsageFaultIntHandler
+                0x0000000000001606                RFCCmdAckIntHandler
+                0x0000000000001606                RFCCPE0IntHandler
+                0x0000000000001606                CryptoIntHandler
+                0x0000000000001606                Timer0AIntHandler
+                0x0000000000001606                I2CIntHandler
+                0x0000000000001606                DebugMonIntHandler
+                0x0000000000001606                Timer0BIntHandler
+                0x0000000000001606                AUXCombEventIntHandler
+                0x0000000000001606                Timer3AIntHandler
+                0x0000000000001606                DynProgIntHandler
+                0x0000000000001606                Timer3BIntHandler
+                0x0000000000001606                AONRTCIntHandler
+ .text.DDI32RegWrite
+                0x0000000000001608       0x22 obj_srf06-cc26xx/setup.o
+ .text.HapiTrimDevicePowerDown
+                0x000000000000162a        0x4 obj_srf06-cc26xx/setup.o
+ .text.SignExtendVddrTrimValue
+                0x000000000000162e       0x1c obj_srf06-cc26xx/setup.o
+ .text.HapiTrimDeviceColdReset
+                0x000000000000164a        0x4 obj_srf06-cc26xx/setup.o
+ .text.NOROM_DDI16BitfieldWrite
+                0x000000000000164e       0x58 obj_srf06-cc26xx/ddi.o
+                0x000000000000164e                NOROM_DDI16BitfieldWrite
+ .text.NOROM_DDI16BitfieldRead
+                0x00000000000016a6       0x62 obj_srf06-cc26xx/ddi.o
+                0x00000000000016a6                NOROM_DDI16BitfieldRead
+ .text.NOROM_CPUcpsid
+                0x0000000000001708        0xe obj_srf06-cc26xx/cpu.o
+                0x0000000000001708                NOROM_CPUcpsid
+ .text.NOROM_CPUcpsie
+                0x0000000000001716        0xe obj_srf06-cc26xx/cpu.o
+                0x0000000000001716                NOROM_CPUcpsie
+ .text.ChipInfo_ChipFamilyIsCC26xx
+                0x0000000000001724       0x16 obj_srf06-cc26xx/chipinfo.o
+ .text.ChipInfo_HwRevisionIs_GTEQ_2_2
+                0x000000000000173a       0x16 obj_srf06-cc26xx/chipinfo.o
+ .text.ThisCodeIsBuiltForCC26xxHwRev22AndLater_HaltIfViolated
+                0x0000000000001750       0x28 obj_srf06-cc26xx/chipinfo.o
+                0x0000000000001750                ThisCodeIsBuiltForCC26xxHwRev22AndLater_HaltIfViolated
+ .text.FlashRead
+                0x0000000000001778       0x2e obj_srf06-cc26xx/ota.o
+                0x0000000000001778                FlashRead
+ .text.crc16    0x00000000000017a6       0x88 obj_srf06-cc26xx/ota.o
+                0x00000000000017a6                crc16
+ .text.get_current_metadata
+                0x000000000000182e       0x1c obj_srf06-cc26xx/ota.o
+                0x000000000000182e                get_current_metadata
+ .text.verify_current_firmware
+                0x000000000000184a       0xae obj_srf06-cc26xx/ota.o
+                0x000000000000184a                verify_current_firmware
+ .text.validate_ota_metadata
+                0x00000000000018f8       0x56 obj_srf06-cc26xx/ota.o
+                0x00000000000018f8                validate_ota_metadata
+ .text.find_newest_ota_image
+                0x000000000000194e       0x70 obj_srf06-cc26xx/ota.o
+                0x000000000000194e                find_newest_ota_image
+ .text.update_firmware_page
+                0x00000000000019be       0xb0 obj_srf06-cc26xx/ota.o
+ .text.jump_to_image
+                0x0000000000001a6e       0x28 obj_srf06-cc26xx/ota.o
+                0x0000000000001a6e                jump_to_image
+ *(SORT(.rodata*))
+ *fill*         0x0000000000001a96        0x2 00000000
+ .rodata        0x0000000000001a98        0x4 obj_srf06-cc26xx/ext-flash.o
+                0x0000000000001a9c                _etext = .
+
+.glue_7         0x0000000000001a9c        0x0
+ .glue_7        0x0000000000001a9c        0x0 linker stubs
+
+.glue_7t        0x0000000000001a9c        0x0
+ .glue_7t       0x0000000000001a9c        0x0 linker stubs
+
+.vfp11_veneer   0x0000000000001a9c        0x0
+ .vfp11_veneer  0x0000000000001a9c        0x0 linker stubs
+
+.v4_bx          0x0000000000001a9c        0x0
+ .v4_bx         0x0000000000001a9c        0x0 linker stubs
+
+.iplt           0x0000000000001a9c        0x0
+ .iplt          0x0000000000001a9c        0x0 obj_srf06-cc26xx/bootloader.o
+
+.data           0x0000000020000000        0x3 load address 0x0000000000001a9c
+                0x0000000020000000                _data = .
+ *(SORT(vtable))
+ *(SORT(.data*))
+ .data.ota_images
+                0x0000000020000000        0x3 obj_srf06-cc26xx/ota.o
+                0x0000000020000000                ota_images
+                0x0000000020000003                _edata = .
+
+.igot.plt       0x0000000020000004        0x0 load address 0x0000000000001a9f
+ .igot.plt      0x0000000020000004        0x0 obj_srf06-cc26xx/bootloader.o
+
+.ARM.exidx
+ *(SORT(.ARM.exidx*))
+
+.bss            0x0000000020000003        0x0
+                0x0000000020000003                _bss = .
+ *(SORT(.bss*))
+ *(SORT(COMMON))
+                0x0000000020000003                _ebss = .
+
+.ccfg           0x000000000001ffa8       0x58
+ *(SORT(.ccfg))
+ .ccfg          0x000000000001ffa8       0x58 obj_srf06-cc26xx/ccfg.o
+                0x000000000001ffa8                __ccfg
+
+.rel.dyn        0x0000000000020000        0x0
+ .rel.iplt      0x0000000000020000        0x0 obj_srf06-cc26xx/bootloader.o
+
+._user_heap_stack
+                0x0000000020000003      0x101
+                0x0000000020000004                . = ALIGN (0x4)
+ *fill*         0x0000000020000003        0x1 
+                0x0000000020000004                . = (. + _Min_Heap_Size)
+                0x0000000020000104                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000004      0x100 
+                0x0000000020000104                . = ALIGN (0x4)
+
+.gpram
+OUTPUT(bootloader.elf elf32-littlearm)
+
+.debug_info     0x0000000000000000     0x4c21
+ .debug_info    0x0000000000000000      0xa1f obj_srf06-cc26xx/bootloader.o
+ .debug_info    0x0000000000000a1f      0xc70 obj_srf06-cc26xx/ext-flash.o
+ .debug_info    0x000000000000168f      0xadd obj_srf06-cc26xx/board-spi.o
+ .debug_info    0x000000000000216c      0x16b obj_srf06-cc26xx/startup_gcc.o
+ .debug_info    0x00000000000022d7      0x1b4 obj_srf06-cc26xx/ccfg.o
+ .debug_info    0x000000000000248b      0x66b obj_srf06-cc26xx/setup.o
+ .debug_info    0x0000000000002af6      0x52e obj_srf06-cc26xx/osc.o
+ .debug_info    0x0000000000003024      0x301 obj_srf06-cc26xx/ddi.o
+ .debug_info    0x0000000000003325      0x4e4 obj_srf06-cc26xx/flash.o
+ .debug_info    0x0000000000003809      0x143 obj_srf06-cc26xx/cpu.o
+ .debug_info    0x000000000000394c      0x288 obj_srf06-cc26xx/chipinfo.o
+ .debug_info    0x0000000000003bd4     0x104d obj_srf06-cc26xx/ota.o
+
+.debug_abbrev   0x0000000000000000     0x1325
+ .debug_abbrev  0x0000000000000000      0x244 obj_srf06-cc26xx/bootloader.o
+ .debug_abbrev  0x0000000000000244      0x29c obj_srf06-cc26xx/ext-flash.o
+ .debug_abbrev  0x00000000000004e0      0x29f obj_srf06-cc26xx/board-spi.o
+ .debug_abbrev  0x000000000000077f       0xc1 obj_srf06-cc26xx/startup_gcc.o
+ .debug_abbrev  0x0000000000000840       0x74 obj_srf06-cc26xx/ccfg.o
+ .debug_abbrev  0x00000000000008b4      0x133 obj_srf06-cc26xx/setup.o
+ .debug_abbrev  0x00000000000009e7      0x1a1 obj_srf06-cc26xx/osc.o
+ .debug_abbrev  0x0000000000000b88       0xbb obj_srf06-cc26xx/ddi.o
+ .debug_abbrev  0x0000000000000c43      0x1a2 obj_srf06-cc26xx/flash.o
+ .debug_abbrev  0x0000000000000de5       0xd0 obj_srf06-cc26xx/cpu.o
+ .debug_abbrev  0x0000000000000eb5      0x137 obj_srf06-cc26xx/chipinfo.o
+ .debug_abbrev  0x0000000000000fec      0x339 obj_srf06-cc26xx/ota.o
+
+.debug_aranges  0x0000000000000000      0x528
+ .debug_aranges
+                0x0000000000000000       0x58 obj_srf06-cc26xx/bootloader.o
+ .debug_aranges
+                0x0000000000000058       0x90 obj_srf06-cc26xx/ext-flash.o
+ .debug_aranges
+                0x00000000000000e8       0x78 obj_srf06-cc26xx/board-spi.o
+ .debug_aranges
+                0x0000000000000160       0x38 obj_srf06-cc26xx/startup_gcc.o
+ .debug_aranges
+                0x0000000000000198       0x18 obj_srf06-cc26xx/ccfg.o
+ .debug_aranges
+                0x00000000000001b0       0xe0 obj_srf06-cc26xx/setup.o
+ .debug_aranges
+                0x0000000000000290       0x70 obj_srf06-cc26xx/osc.o
+ .debug_aranges
+                0x0000000000000300       0x48 obj_srf06-cc26xx/ddi.o
+ .debug_aranges
+                0x0000000000000348       0x88 obj_srf06-cc26xx/flash.o
+ .debug_aranges
+                0x00000000000003d0       0x40 obj_srf06-cc26xx/cpu.o
+ .debug_aranges
+                0x0000000000000410       0x60 obj_srf06-cc26xx/chipinfo.o
+ .debug_aranges
+                0x0000000000000470       0xb8 obj_srf06-cc26xx/ota.o
+
+.debug_ranges   0x0000000000000000      0x460
+ .debug_ranges  0x0000000000000000       0x48 obj_srf06-cc26xx/bootloader.o
+ .debug_ranges  0x0000000000000048       0x80 obj_srf06-cc26xx/ext-flash.o
+ .debug_ranges  0x00000000000000c8       0x68 obj_srf06-cc26xx/board-spi.o
+ .debug_ranges  0x0000000000000130       0x28 obj_srf06-cc26xx/startup_gcc.o
+ .debug_ranges  0x0000000000000158       0xd0 obj_srf06-cc26xx/setup.o
+ .debug_ranges  0x0000000000000228       0x60 obj_srf06-cc26xx/osc.o
+ .debug_ranges  0x0000000000000288       0x38 obj_srf06-cc26xx/ddi.o
+ .debug_ranges  0x00000000000002c0       0x78 obj_srf06-cc26xx/flash.o
+ .debug_ranges  0x0000000000000338       0x30 obj_srf06-cc26xx/cpu.o
+ .debug_ranges  0x0000000000000368       0x50 obj_srf06-cc26xx/chipinfo.o
+ .debug_ranges  0x00000000000003b8       0xa8 obj_srf06-cc26xx/ota.o
+
+.debug_line     0x0000000000000000     0x1bc9
+ .debug_line    0x0000000000000000      0x225 obj_srf06-cc26xx/bootloader.o
+ .debug_line    0x0000000000000225      0x324 obj_srf06-cc26xx/ext-flash.o
+ .debug_line    0x0000000000000549      0x28b obj_srf06-cc26xx/board-spi.o
+ .debug_line    0x00000000000007d4      0x127 obj_srf06-cc26xx/startup_gcc.o
+ .debug_line    0x00000000000008fb      0x10b obj_srf06-cc26xx/ccfg.o
+ .debug_line    0x0000000000000a06      0x442 obj_srf06-cc26xx/setup.o
+ .debug_line    0x0000000000000e48      0x205 obj_srf06-cc26xx/osc.o
+ .debug_line    0x000000000000104d      0x193 obj_srf06-cc26xx/ddi.o
+ .debug_line    0x00000000000011e0      0x2c7 obj_srf06-cc26xx/flash.o
+ .debug_line    0x00000000000014a7      0x123 obj_srf06-cc26xx/cpu.o
+ .debug_line    0x00000000000015ca      0x1dc obj_srf06-cc26xx/chipinfo.o
+ .debug_line    0x00000000000017a6      0x423 obj_srf06-cc26xx/ota.o
+
+.debug_str      0x0000000000000000     0x1e9a
+ .debug_str     0x0000000000000000      0x624 obj_srf06-cc26xx/bootloader.o
+                                        0x6c8 (size before relaxing)
+ .debug_str     0x0000000000000624      0x132 obj_srf06-cc26xx/ext-flash.o
+                                        0x6ee (size before relaxing)
+ .debug_str     0x0000000000000756       0xd6 obj_srf06-cc26xx/board-spi.o
+                                        0x6ab (size before relaxing)
+ .debug_str     0x000000000000082c       0xbb obj_srf06-cc26xx/startup_gcc.o
+                                        0x273 (size before relaxing)
+ .debug_str     0x00000000000008e7      0x1de obj_srf06-cc26xx/ccfg.o
+                                        0x387 (size before relaxing)
+ .debug_str     0x0000000000000ac5      0x4da obj_srf06-cc26xx/setup.o
+                                        0x6d2 (size before relaxing)
+ .debug_str     0x0000000000000f9f      0x49c obj_srf06-cc26xx/osc.o
+                                        0x683 (size before relaxing)
+ .debug_str     0x000000000000143b       0xe5 obj_srf06-cc26xx/ddi.o
+                                        0x2fc (size before relaxing)
+ .debug_str     0x0000000000001520      0x317 obj_srf06-cc26xx/flash.o
+                                        0x4ef (size before relaxing)
+ .debug_str     0x0000000000001837       0x94 obj_srf06-cc26xx/cpu.o
+                                        0x247 (size before relaxing)
+ .debug_str     0x00000000000018cb      0x2cb obj_srf06-cc26xx/chipinfo.o
+                                        0x47a (size before relaxing)
+ .debug_str     0x0000000000001b96      0x304 obj_srf06-cc26xx/ota.o
+                                        0x992 (size before relaxing)
+
+.comment        0x0000000000000000       0x6e
+ .comment       0x0000000000000000       0x6e obj_srf06-cc26xx/bootloader.o
+                                         0x6f (size before relaxing)
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/ext-flash.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/board-spi.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/startup_gcc.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/ccfg.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/setup.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/osc.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/ddi.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/flash.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/cpu.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/chipinfo.o
+ .comment       0x000000000000006e       0x6f obj_srf06-cc26xx/ota.o
+
+.ARM.attributes
+                0x0000000000000000       0x31
+ .ARM.attributes
+                0x0000000000000000       0x33 obj_srf06-cc26xx/bootloader.o
+ .ARM.attributes
+                0x0000000000000033       0x33 obj_srf06-cc26xx/ext-flash.o
+ .ARM.attributes
+                0x0000000000000066       0x33 obj_srf06-cc26xx/board-spi.o
+ .ARM.attributes
+                0x0000000000000099       0x33 obj_srf06-cc26xx/startup_gcc.o
+ .ARM.attributes
+                0x00000000000000cc       0x33 obj_srf06-cc26xx/ccfg.o
+ .ARM.attributes
+                0x00000000000000ff       0x33 obj_srf06-cc26xx/setup.o
+ .ARM.attributes
+                0x0000000000000132       0x33 obj_srf06-cc26xx/osc.o
+ .ARM.attributes
+                0x0000000000000165       0x33 obj_srf06-cc26xx/ddi.o
+ .ARM.attributes
+                0x0000000000000198       0x33 obj_srf06-cc26xx/flash.o
+ .ARM.attributes
+                0x00000000000001cb       0x33 obj_srf06-cc26xx/cpu.o
+ .ARM.attributes
+                0x00000000000001fe       0x33 obj_srf06-cc26xx/chipinfo.o
+ .ARM.attributes
+                0x0000000000000231       0x33 obj_srf06-cc26xx/ota.o
+
+.debug_frame    0x0000000000000000      0xd24
+ .debug_frame   0x0000000000000000       0xc8 obj_srf06-cc26xx/bootloader.o
+ .debug_frame   0x00000000000000c8      0x19c obj_srf06-cc26xx/ext-flash.o
+ .debug_frame   0x0000000000000264      0x12c obj_srf06-cc26xx/board-spi.o
+ .debug_frame   0x0000000000000390       0x5c obj_srf06-cc26xx/startup_gcc.o
+ .debug_frame   0x00000000000003ec      0x25c obj_srf06-cc26xx/setup.o
+ .debug_frame   0x0000000000000648      0x120 obj_srf06-cc26xx/osc.o
+ .debug_frame   0x0000000000000768       0xb8 obj_srf06-cc26xx/ddi.o
+ .debug_frame   0x0000000000000820      0x184 obj_srf06-cc26xx/flash.o
+ .debug_frame   0x00000000000009a4       0x60 obj_srf06-cc26xx/cpu.o
+ .debug_frame   0x0000000000000a04       0xdc obj_srf06-cc26xx/chipinfo.o
+ .debug_frame   0x0000000000000ae0      0x244 obj_srf06-cc26xx/ota.o
+
+Cross Reference Table
+
+Symbol                                            File
+AONBatMonTemperatureGetDegC                       obj_srf06-cc26xx/aon_batmon.o
+                                                  obj_srf06-cc26xx/sys_ctrl.o
+                                                  obj_srf06-cc26xx/osc.o
+AONIntHandler                                     obj_srf06-cc26xx/startup_gcc.o
+AONProgIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+AONRTCIntHandler                                  obj_srf06-cc26xx/startup_gcc.o
+AUXADCIntHandler                                  obj_srf06-cc26xx/startup_gcc.o
+AUXCombEventIntHandler                            obj_srf06-cc26xx/startup_gcc.o
+AUXCompAIntHandler                                obj_srf06-cc26xx/startup_gcc.o
+AUXSWEvent0IntHandler                             obj_srf06-cc26xx/startup_gcc.o
+AUXSWEvent1IntHandler                             obj_srf06-cc26xx/startup_gcc.o
+BusFaultIntHandler                                obj_srf06-cc26xx/startup_gcc.o
+ChipInfo_GetChipFamily                            obj_srf06-cc26xx/chipinfo.o
+ChipInfo_GetHwRevision                            obj_srf06-cc26xx/chipinfo.o
+ChipInfo_GetPackageType                           obj_srf06-cc26xx/chipinfo.o
+ChipInfo_GetSupportedProtocol_BV                  obj_srf06-cc26xx/chipinfo.o
+CryptoIntHandler                                  obj_srf06-cc26xx/startup_gcc.o
+DebugMonIntHandler                                obj_srf06-cc26xx/startup_gcc.o
+DynProgIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+FaultISR                                          obj_srf06-cc26xx/startup_gcc.o
+FlashIntHandler                                   obj_srf06-cc26xx/startup_gcc.o
+FlashRead                                         obj_srf06-cc26xx/ota.o
+GPIOIntHandler                                    obj_srf06-cc26xx/startup_gcc.o
+I2CIntHandler                                     obj_srf06-cc26xx/startup_gcc.o
+I2SIntHandler                                     obj_srf06-cc26xx/startup_gcc.o
+MPUFaultIntHandler                                obj_srf06-cc26xx/startup_gcc.o
+MemBusWrkAroundHapiEraseSector                    obj_srf06-cc26xx/flash.o
+MemBusWrkAroundHapiProgramFlash                   obj_srf06-cc26xx/flash.o
+NOROM_AONEventAuxWakeUpGet                        obj_srf06-cc26xx/aon_event.o
+NOROM_AONEventAuxWakeUpSet                        obj_srf06-cc26xx/aon_event.o
+NOROM_AONEventMcuGet                              obj_srf06-cc26xx/aon_event.o
+NOROM_AONEventMcuSet                              obj_srf06-cc26xx/aon_event.o
+NOROM_AONEventMcuWakeUpGet                        obj_srf06-cc26xx/aon_event.o
+NOROM_AONEventMcuWakeUpSet                        obj_srf06-cc26xx/aon_event.o
+NOROM_AONIOCDriveStrengthGet                      obj_srf06-cc26xx/aon_ioc.o
+NOROM_AONIOCDriveStrengthSet                      obj_srf06-cc26xx/aon_ioc.o
+NOROM_AONRTCCurrent64BitValueGet                  obj_srf06-cc26xx/aon_rtc.o
+NOROM_AONRTCCurrentCompareValueGet                obj_srf06-cc26xx/aon_rtc.o
+                                                  obj_srf06-cc26xx/osc.o
+NOROM_AONWUCAuxReset                              obj_srf06-cc26xx/aon_wuc.o
+NOROM_AONWUCOscConfig                             obj_srf06-cc26xx/aon_wuc.o
+NOROM_AONWUCRechargeCtrlConfigSet                 obj_srf06-cc26xx/aon_wuc.o
+NOROM_AUXADCAdjustValueForGainAndOffset           obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCDisable                               obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCDisableInputScaling                   obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCEnableAsync                           obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCEnableSync                            obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCFlushFifo                             obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCGetAdjustmentGain                     obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCGetAdjustmentOffset                   obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCMicrovoltsToValue                     obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCPopFifo                               obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCReadFifo                              obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCUnadjustValueForGainAndOffset         obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXADCValueToMicrovolts                     obj_srf06-cc26xx/aux_adc.o
+NOROM_AUXTDCConfigSet                             obj_srf06-cc26xx/aux_tdc.o
+NOROM_AUXTDCMeasurementDone                       obj_srf06-cc26xx/aux_tdc.o
+NOROM_AUXTimerConfigure                           obj_srf06-cc26xx/aux_timer.o
+NOROM_AUXTimerPrescaleGet                         obj_srf06-cc26xx/aux_timer.o
+NOROM_AUXTimerPrescaleSet                         obj_srf06-cc26xx/aux_timer.o
+NOROM_AUXTimerStart                               obj_srf06-cc26xx/aux_timer.o
+NOROM_AUXTimerStop                                obj_srf06-cc26xx/aux_timer.o
+NOROM_AUXWUCClockDisable                          obj_srf06-cc26xx/aux_wuc.o
+NOROM_AUXWUCClockEnable                           obj_srf06-cc26xx/aux_wuc.o
+NOROM_AUXWUCClockStatus                           obj_srf06-cc26xx/aux_wuc.o
+NOROM_AUXWUCPowerCtrl                             obj_srf06-cc26xx/aux_wuc.o
+NOROM_CPUbasepriGet                               obj_srf06-cc26xx/cpu.o
+NOROM_CPUcpsid                                    obj_srf06-cc26xx/cpu.o
+                                                  obj_srf06-cc26xx/aux_adc.o
+                                                  obj_srf06-cc26xx/ddi.o
+                                                  obj_srf06-cc26xx/adi.o
+                                                  obj_srf06-cc26xx/setup.o
+                                                  obj_srf06-cc26xx/bootloader.o
+NOROM_CPUcpsie                                    obj_srf06-cc26xx/cpu.o
+                                                  obj_srf06-cc26xx/aux_adc.o
+                                                  obj_srf06-cc26xx/ddi.o
+                                                  obj_srf06-cc26xx/adi.o
+                                                  obj_srf06-cc26xx/setup.o
+                                                  obj_srf06-cc26xx/bootloader.o
+NOROM_CPUdelay                                    obj_srf06-cc26xx/cpu.o
+                                                  obj_srf06-cc26xx/crypto.o
+NOROM_CPUprimask                                  obj_srf06-cc26xx/cpu.o
+NOROM_CRYPTOAesEcb                                obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOAesEcbStatus                          obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOAesLoadKey                            obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOCcmAuthEncrypt                        obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOCcmAuthEncryptResultGet               obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOCcmAuthEncryptStatus                  obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOCcmInvAuthDecrypt                     obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOCcmInvAuthDecryptResultGet            obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTOCcmInvAuthDecryptStatus               obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTODmaDisable                            obj_srf06-cc26xx/crypto.o
+NOROM_CRYPTODmaEnable                             obj_srf06-cc26xx/crypto.o
+NOROM_DDI16BitRead                                obj_srf06-cc26xx/ddi.o
+NOROM_DDI16BitWrite                               obj_srf06-cc26xx/ddi.o
+NOROM_DDI16BitfieldRead                           obj_srf06-cc26xx/ddi.o
+                                                  obj_srf06-cc26xx/osc.o
+NOROM_DDI16BitfieldWrite                          obj_srf06-cc26xx/ddi.o
+                                                  obj_srf06-cc26xx/osc.o
+                                                  obj_srf06-cc26xx/setup.o
+NOROM_FlashDisableSectorsForWrite                 obj_srf06-cc26xx/flash.o
+NOROM_FlashEfuseReadRow                           obj_srf06-cc26xx/flash.o
+NOROM_FlashPowerModeGet                           obj_srf06-cc26xx/flash.o
+NOROM_FlashPowerModeSet                           obj_srf06-cc26xx/flash.o
+                                                  obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashProgram                                obj_srf06-cc26xx/flash.o
+                                                  obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashProtectionGet                          obj_srf06-cc26xx/flash.o
+NOROM_FlashProtectionSave                         obj_srf06-cc26xx/flash.o
+NOROM_FlashProtectionSet                          obj_srf06-cc26xx/flash.o
+NOROM_FlashSectorErase                            obj_srf06-cc26xx/flash.o
+                                                  obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeCheckFsmForError                   obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeCheckFsmForReady                   obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeDisableSectorsForWrite             obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeIntClear                           obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeIntDisable                         obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeIntEnable                          obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeIntRegister                        obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeIntStatus                          obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeIntUnregister                      obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafePowerModeGet                       obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafePowerModeSet                       obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeProgram                            obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeProtectionGet                      obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeProtectionSave                     obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeProtectionSet                      obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeSectorErase                        obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeSectorSizeGet                      obj_srf06-cc26xx/flashsafe.o
+NOROM_FlashsafeSizeGet                            obj_srf06-cc26xx/flashsafe.o
+NOROM_I2CIntRegister                              obj_srf06-cc26xx/i2c.o
+NOROM_I2CIntUnregister                            obj_srf06-cc26xx/i2c.o
+NOROM_I2CMasterErr                                obj_srf06-cc26xx/i2c.o
+NOROM_I2CMasterInitExpClk                         obj_srf06-cc26xx/i2c.o
+NOROM_I2SAudioFormatConfigure                     obj_srf06-cc26xx/i2s.o
+NOROM_I2SBufferConfig                             obj_srf06-cc26xx/i2s.o
+NOROM_I2SChannelConfigure                         obj_srf06-cc26xx/i2s.o
+NOROM_I2SEnable                                   obj_srf06-cc26xx/i2s.o
+NOROM_I2SPointerSet                               obj_srf06-cc26xx/i2s.o
+NOROM_I2SPointerUpdate                            obj_srf06-cc26xx/i2s.o
+NOROM_I2SSampleStampConfigure                     obj_srf06-cc26xx/i2s.o
+NOROM_I2SSampleStampGet                           obj_srf06-cc26xx/i2s.o
+NOROM_IOCIODrvStrengthSet                         obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOHystSet                                obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOInputSet                               obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOIntSet                                 obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOModeSet                                obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOPortIdSet                              obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOPortPullSet                            obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOShutdownSet                            obj_srf06-cc26xx/ioc.o
+NOROM_IOCIOSlewCtrlSet                            obj_srf06-cc26xx/ioc.o
+NOROM_IOCIntDisable                               obj_srf06-cc26xx/ioc.o
+NOROM_IOCIntEnable                                obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeAux                               obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeGpioInput                         obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeGpioOutput                        obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeI2c                               obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeSpis                              obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeSsiMaster                         obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeSsiSlave                          obj_srf06-cc26xx/ioc.o
+NOROM_IOCPinTypeUart                              obj_srf06-cc26xx/ioc.o
+NOROM_IOCPortConfigureGet                         obj_srf06-cc26xx/ioc.o
+NOROM_IOCPortConfigureSet                         obj_srf06-cc26xx/ioc.o
+NOROM_IntDisable                                  obj_srf06-cc26xx/interrupt.o
+NOROM_IntEnable                                   obj_srf06-cc26xx/interrupt.o
+NOROM_IntPendClear                                obj_srf06-cc26xx/interrupt.o
+NOROM_IntPendGet                                  obj_srf06-cc26xx/interrupt.o
+NOROM_IntPendSet                                  obj_srf06-cc26xx/interrupt.o
+NOROM_IntPriorityGet                              obj_srf06-cc26xx/interrupt.o
+NOROM_IntPriorityGroupingGet                      obj_srf06-cc26xx/interrupt.o
+NOROM_IntPriorityGroupingSet                      obj_srf06-cc26xx/interrupt.o
+NOROM_IntPrioritySet                              obj_srf06-cc26xx/interrupt.o
+NOROM_IntRegister                                 obj_srf06-cc26xx/interrupt.o
+                                                  obj_srf06-cc26xx/timer.o
+                                                  obj_srf06-cc26xx/uart.o
+                                                  obj_srf06-cc26xx/flashsafe.o
+                                                  obj_srf06-cc26xx/i2c.o
+                                                  obj_srf06-cc26xx/ssi.o
+NOROM_IntUnregister                               obj_srf06-cc26xx/interrupt.o
+                                                  obj_srf06-cc26xx/timer.o
+                                                  obj_srf06-cc26xx/uart.o
+                                                  obj_srf06-cc26xx/flashsafe.o
+                                                  obj_srf06-cc26xx/i2c.o
+                                                  obj_srf06-cc26xx/ssi.o
+NOROM_OSCClockSourceGet                           obj_srf06-cc26xx/osc.o
+                                                  obj_srf06-cc26xx/sys_ctrl.o
+                                                  obj_srf06-cc26xx/setup.o
+NOROM_OSCClockSourceSet                           obj_srf06-cc26xx/osc.o
+                                                  obj_srf06-cc26xx/sys_ctrl.o
+                                                  obj_srf06-cc26xx/setup.o
+NOROM_OSCInterfaceEnable                          obj_srf06-cc26xx/osc.o
+                                                  obj_srf06-cc26xx/sys_ctrl.o
+NOROM_PRCMAudioClockConfigSet                     obj_srf06-cc26xx/prcm.o
+NOROM_PRCMAudioClockConfigSetOverride             obj_srf06-cc26xx/prcm.o
+NOROM_PRCMDeepSleep                               obj_srf06-cc26xx/prcm.o
+NOROM_PRCMInfClockConfigureGet                    obj_srf06-cc26xx/prcm.o
+NOROM_PRCMInfClockConfigureSet                    obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPeripheralDeepSleepDisable              obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPeripheralDeepSleepEnable               obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPeripheralRunDisable                    obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPeripheralRunEnable                     obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPeripheralSleepDisable                  obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPeripheralSleepEnable                   obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPowerDomainOff                          obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPowerDomainOn                           obj_srf06-cc26xx/prcm.o
+NOROM_PRCMPowerDomainStatus                       obj_srf06-cc26xx/prcm.o
+NOROM_PowerCtrlSourceSet                          obj_srf06-cc26xx/pwr_ctrl.o
+NOROM_PowerCtrlStateSet                           obj_srf06-cc26xx/pwr_ctrl.o
+                                                  obj_srf06-cc26xx/sys_ctrl.o
+NOROM_RFCCpeIntGetAndClear                        obj_srf06-cc26xx/rfc.o
+NOROM_SMPHAcquire                                 obj_srf06-cc26xx/smph.o
+NOROM_SSIConfigSetExpClk                          obj_srf06-cc26xx/ssi.o
+NOROM_SSIDataGet                                  obj_srf06-cc26xx/ssi.o
+NOROM_SSIDataGetNonBlocking                       obj_srf06-cc26xx/ssi.o
+NOROM_SSIDataPut                                  obj_srf06-cc26xx/ssi.o
+NOROM_SSIDataPutNonBlocking                       obj_srf06-cc26xx/ssi.o
+NOROM_SSIIntRegister                              obj_srf06-cc26xx/ssi.o
+NOROM_SSIIntUnregister                            obj_srf06-cc26xx/ssi.o
+NOROM_SysCtrlPowerEverything                      obj_srf06-cc26xx/sys_ctrl.o
+NOROM_SysCtrlPowerdown                            obj_srf06-cc26xx/sys_ctrl.o
+NOROM_SysCtrlResetSourceGet                       obj_srf06-cc26xx/sys_ctrl.o
+NOROM_SysCtrlShutdown                             obj_srf06-cc26xx/sys_ctrl.o
+NOROM_SysCtrlStandby                              obj_srf06-cc26xx/sys_ctrl.o
+NOROM_TRNGConfigure                               obj_srf06-cc26xx/trng.o
+NOROM_TRNGNumberGet                               obj_srf06-cc26xx/trng.o
+NOROM_TimerConfigure                              obj_srf06-cc26xx/timer.o
+NOROM_TimerIntRegister                            obj_srf06-cc26xx/timer.o
+NOROM_TimerIntUnregister                          obj_srf06-cc26xx/timer.o
+NOROM_TimerIntervalLoadMode                       obj_srf06-cc26xx/timer.o
+NOROM_TimerLevelControl                           obj_srf06-cc26xx/timer.o
+NOROM_TimerMatchUpdateMode                        obj_srf06-cc26xx/timer.o
+NOROM_TimerStallControl                           obj_srf06-cc26xx/timer.o
+NOROM_TimerWaitOnTriggerControl                   obj_srf06-cc26xx/timer.o
+NOROM_UARTCharGet                                 obj_srf06-cc26xx/uart.o
+NOROM_UARTCharGetNonBlocking                      obj_srf06-cc26xx/uart.o
+NOROM_UARTCharPut                                 obj_srf06-cc26xx/uart.o
+NOROM_UARTCharPutNonBlocking                      obj_srf06-cc26xx/uart.o
+NOROM_UARTConfigGetExpClk                         obj_srf06-cc26xx/uart.o
+NOROM_UARTConfigSetExpClk                         obj_srf06-cc26xx/uart.o
+NOROM_UARTDisable                                 obj_srf06-cc26xx/uart.o
+NOROM_UARTFIFOLevelGet                            obj_srf06-cc26xx/uart.o
+NOROM_UARTIntRegister                             obj_srf06-cc26xx/uart.o
+NOROM_UARTIntUnregister                           obj_srf06-cc26xx/uart.o
+NOROM_VIMSConfigure                               obj_srf06-cc26xx/vims.o
+NOROM_VIMSModeGet                                 obj_srf06-cc26xx/vims.o
+NOROM_VIMSModeSet                                 obj_srf06-cc26xx/vims.o
+NOROM_VIMSModeSetBlocking                         obj_srf06-cc26xx/vims.o
+NOROM_uDMAChannelAttributeDisable                 obj_srf06-cc26xx/udma.o
+NOROM_uDMAChannelAttributeEnable                  obj_srf06-cc26xx/udma.o
+NOROM_uDMAChannelAttributeGet                     obj_srf06-cc26xx/udma.o
+NOROM_uDMAChannelControlSet                       obj_srf06-cc26xx/udma.o
+NOROM_uDMAChannelModeGet                          obj_srf06-cc26xx/udma.o
+NOROM_uDMAChannelScatterGatherSet                 obj_srf06-cc26xx/udma.o
+NOROM_uDMAChannelSizeGet                          obj_srf06-cc26xx/udma.o
+NOROM_uDMAChannelTransferSet                      obj_srf06-cc26xx/udma.o
+NmiSR                                             obj_srf06-cc26xx/startup_gcc.o
+OSCHF_AttemptToSwitchToXosc                       obj_srf06-cc26xx/osc.o
+OSCHF_GetStartupTime                              obj_srf06-cc26xx/osc.o
+OSCHF_SwitchToRcOscTurnOffXosc                    obj_srf06-cc26xx/osc.o
+OSCHF_TurnOnXosc                                  obj_srf06-cc26xx/osc.o
+PendSVIntHandler                                  obj_srf06-cc26xx/startup_gcc.o
+RFCCPE0IntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+RFCCPE1IntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+RFCCmdAckIntHandler                               obj_srf06-cc26xx/startup_gcc.o
+RFCHardwareIntHandler                             obj_srf06-cc26xx/startup_gcc.o
+ResetISR                                          obj_srf06-cc26xx/startup_gcc.o
+SSI0IntHandler                                    obj_srf06-cc26xx/startup_gcc.o
+SSI1IntHandler                                    obj_srf06-cc26xx/startup_gcc.o
+SVCallIntHandler                                  obj_srf06-cc26xx/startup_gcc.o
+SWEvent0IntHandler                                obj_srf06-cc26xx/startup_gcc.o
+SafeHapiAuxAdiSelect                              obj_srf06-cc26xx/adi.o
+SysCtrlAdjustRechargeAfterPowerDown               obj_srf06-cc26xx/sys_ctrl.o
+SysCtrlSetRechargeBeforePowerDown                 obj_srf06-cc26xx/sys_ctrl.o
+SysCtrl_DCDC_VoltageConditionalControl            obj_srf06-cc26xx/sys_ctrl.o
+SysTickIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+TRNGIntHandler                                    obj_srf06-cc26xx/startup_gcc.o
+ThisCodeIsBuiltForCC26xxHwRev22AndLater_HaltIfViolated obj_srf06-cc26xx/chipinfo.o
+                                                  obj_srf06-cc26xx/setup.o
+Timer0AIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+Timer0BIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+Timer1AIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+Timer1BIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+Timer2AIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+Timer2BIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+Timer3AIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+Timer3BIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+UART0IntHandler                                   obj_srf06-cc26xx/startup_gcc.o
+UsageFaultIntHandler                              obj_srf06-cc26xx/startup_gcc.o
+WatchdogIntHandler                                obj_srf06-cc26xx/startup_gcc.o
+__ccfg                                            obj_srf06-cc26xx/ccfg.o
+_bss                                              obj_srf06-cc26xx/startup_gcc.o
+_data                                             obj_srf06-cc26xx/startup_gcc.o
+_ebss                                             obj_srf06-cc26xx/startup_gcc.o
+_edata                                            obj_srf06-cc26xx/startup_gcc.o
+_estack                                           obj_srf06-cc26xx/startup_gcc.o
+_etext                                            obj_srf06-cc26xx/startup_gcc.o
+backup_golden_image                               obj_srf06-cc26xx/ota.o
+board_spi_close                                   obj_srf06-cc26xx/board-spi.o
+                                                  obj_srf06-cc26xx/ext-flash.o
+board_spi_flush                                   obj_srf06-cc26xx/board-spi.o
+                                                  obj_srf06-cc26xx/ext-flash.o
+board_spi_open                                    obj_srf06-cc26xx/board-spi.o
+                                                  obj_srf06-cc26xx/ext-flash.o
+board_spi_read                                    obj_srf06-cc26xx/board-spi.o
+                                                  obj_srf06-cc26xx/ext-flash.o
+board_spi_write                                   obj_srf06-cc26xx/board-spi.o
+                                                  obj_srf06-cc26xx/ext-flash.o
+crc16                                             obj_srf06-cc26xx/ota.o
+driverlib_release_0_44336                         obj_srf06-cc26xx/driverlib_release.o
+erase_extflash_page                               obj_srf06-cc26xx/ota.o
+erase_ota_image                                   obj_srf06-cc26xx/ota.o
+ext_flash_close                                   obj_srf06-cc26xx/ext-flash.o
+                                                  obj_srf06-cc26xx/ota.o
+ext_flash_erase                                   obj_srf06-cc26xx/ext-flash.o
+                                                  obj_srf06-cc26xx/ota.o
+ext_flash_init                                    obj_srf06-cc26xx/ext-flash.o
+                                                  obj_srf06-cc26xx/bootloader.o
+ext_flash_open                                    obj_srf06-cc26xx/ext-flash.o
+                                                  obj_srf06-cc26xx/ota.o
+ext_flash_read                                    obj_srf06-cc26xx/ext-flash.o
+                                                  obj_srf06-cc26xx/ota.o
+ext_flash_test                                    obj_srf06-cc26xx/ext-flash.o
+ext_flash_write                                   obj_srf06-cc26xx/ext-flash.o
+                                                  obj_srf06-cc26xx/ota.o
+find_empty_ota_slot                               obj_srf06-cc26xx/ota.o
+find_matching_ota_slot                            obj_srf06-cc26xx/ota.o
+find_newest_ota_image                             obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/bootloader.o
+find_oldest_ota_image                             obj_srf06-cc26xx/ota.o
+gVectors                                          obj_srf06-cc26xx/startup_gcc.o
+g_pControlTable                                   obj_srf06-cc26xx/i2s.o
+g_pui8CcfgDefaultSec                              obj_srf06-cc26xx/flash.o
+g_ui32CurrentAesOp                                obj_srf06-cc26xx/crypto.o
+get_current_metadata                              obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/bootloader.o
+get_ota_slot_metadata                             obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/bootloader.o
+initialize_peripherals                            obj_srf06-cc26xx/bootloader.o
+jump_to_image                                     obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/bootloader.o
+main                                              obj_srf06-cc26xx/bootloader.o
+                                                  obj_srf06-cc26xx/startup_gcc.o
+memcpy                                            /usr/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libg.a(lib_a-memcpy.o)
+                                                  obj_srf06-cc26xx/ota.o
+ota_images                                        obj_srf06-cc26xx/ota.o
+overwrite_ota_slot_metadata                       obj_srf06-cc26xx/ota.o
+print_metadata                                    obj_srf06-cc26xx/ota.o
+store_firmware_data                               obj_srf06-cc26xx/ota.o
+trimDevice                                        obj_srf06-cc26xx/setup.o
+                                                  obj_srf06-cc26xx/startup_gcc.o
+uDMAErrIntHandler                                 obj_srf06-cc26xx/startup_gcc.o
+uDMAIntHandler                                    obj_srf06-cc26xx/startup_gcc.o
+update_firmware                                   obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/bootloader.o
+validate_ota_metadata                             obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/bootloader.o
+verify_current_firmware                           obj_srf06-cc26xx/ota.o
+                                                  obj_srf06-cc26xx/bootloader.o
+verify_ota_slot                                   obj_srf06-cc26xx/ota.o
