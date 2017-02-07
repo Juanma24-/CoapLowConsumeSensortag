@@ -31,6 +31,7 @@
 #ifndef PROJECT_CONF_H_
 #define PROJECT_CONF_H_
 
+/*-----------------MULTICAST-------------------------------------------------*/
 #include "net/ipv6/multicast/uip-mcast6-engines.h"
 
 /* Change this to switch engines. Engine codes in uip-mcast6-engines.h */
@@ -46,7 +47,7 @@
 #define UIP_CONF_ROUTER              1			//El nodo actúa como Router
 #define UIP_CONF_IPV6_RPL			       1		  //RPL es usado para rutar Ipv6
 #define UIP_MCAST6_ROUTE_CONF_ROUTES 1			//Tamaño de Multicast routing table
-#define NETSTACK_CONF_WITH_IPV6      1			//Especifica: ipv6 debe ser usado
+#define NETSTACK_CONF_WITH_IPV6      1			//Especifica: ipv6 debe ser usado (fuerza 6LoWPAN)
 
 #undef UIP_CONF_TCP
 #define UIP_CONF_TCP 0                      //Soporte TCP (desactivado, ahorra memoria)
@@ -54,16 +55,31 @@
 /* Code/RAM footprint savings so that things will fit on our device */
 #undef NBR_TABLE_CONF_MAX_NEIGHBORS
 #undef UIP_CONF_MAX_ROUTES
-#define NBR_TABLE_CONF_MAX_NEIGHBORS  10    //Máximo número de vecinos en tabla de dispositivo
-#define UIP_CONF_MAX_ROUTES           10    //Máximo número de rutas que puede manejar el dispositivo
+#define NBR_TABLE_CONF_MAX_NEIGHBORS  10    //Máximo número de vecinos en tabla de dispositivo (defecto 20)
+#define UIP_CONF_MAX_ROUTES           10    //Máximo número de rutas que puede manejar el dispositivo (defecto 20)
+
+/*------------------------------OTA------------------------------------------*/
+#undef UIP_CONF_BUFFER_SIZE
+#define UIP_CONF_BUFFER_SIZE          768     //NO se puede llegar a 1280 por falta de espacio en SRAM
+                                              //Por defecto 1000
+
+#undef COAP_MAX_OPEN_TRANSACTIONS
+#define COAP_MAX_OPEN_TRANSACTIONS    2   //Multiplies with chunk size, be aware of memory
+
+#undef COAP_LINK_FORMAT_FILTERING
+#define COAP_LINK_FORMAT_FILTERING    0   //Disable to save memory
+
+#undef COAP_PROXY_OPTION_PROCESSING
+#define COAP_PROXY_OPTION_PROCESSING  0   //Disable to save memory
+
 
 /*---------------------------------------------------------------------------*/
 /* Change to match your configuration */
-#define IEEE802154_CONF_PANID            0xABCD
-#define RF_CORE_CONF_CHANNEL                 25
+#define IEEE802154_CONF_PANID            0xABCD           //Está en el valor por defecto IDENTIFICADOR DE PERSONAL AREA NETWORK
+#define RF_CORE_CONF_CHANNEL                 25           //Está en el valor por defecto
 /*---------------------------------------------------------------------------*/
 /* Enable the ROM bootloader */
-#define ROM_BOOTLOADER_ENABLE                 1
+#define ROM_BOOTLOADER_ENABLE                 1         //Por defecto en 0
 #define BOARD_CONF_DEBUGGER_DEVPACK			      1         //Necesario para hacer debugging
 /* Disable button shutdown functionality */
 #define BUTTON_SENSOR_CONF_ENABLE_SHUTDOWN    1         //Importante mantener siempre a 1 (siempre puede ser útil apagar el dispositivo)
@@ -73,8 +89,9 @@
 #define UIP_DS6_CONF_PERIOD        CLOCK_SECOND         //
 #define RPL_CONF_LEAF_ONLY                    1         //Solo como modo hoja ¿?
 
-#define REST_MAX_CHUNK_SIZE     128                     //Tamaño mensaje (pedazo) de motor REST
+#define REST_MAX_CHUNK_SIZE     256                     //Tamaño mensaje (pedazo) de motor REST
                                                         //Sólo potencias de 2
+                                                        //Aumentado a 256 para usar OTA
 /*
  * We'll fail without RPL probing, so turn it on explicitly even though it's
  * on by default

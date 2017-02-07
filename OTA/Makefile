@@ -5,10 +5,18 @@ all: $(CONTIKI_PROJECT)
 
 CONTIKI_WITH_IPV6 = 1
 
+PROJECTDIR?=.
+
+APPDIRS += $(PROJECTDIR)/apps
+
 APPS += er-coap
 APPS += rest-engine
+APPS += ota
 
-CONTIKI = ../../..
+OTA=1
+
+CONTIKI = ../../../..
 MODULES += core/net/ipv6/multicast
+
 
 include $(CONTIKI)/Makefile.include

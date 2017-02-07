@@ -54,8 +54,9 @@
 #include "contiki-lib.h"
 #include "contiki-net.h"
 #include "net/ipv6/multicast/uip-mcast6.h"
-
 #include <string.h>
+/*--------Librería para OTA--------------------------------------------------*/
+#include "ota-download.h"
 
 #define MCAST_SINK_UDP_PORT 3001 /*Host byte order*/
 static struct uip_udp_conn *sink_conn;
@@ -90,6 +91,7 @@ static uip_ds6_maddr_t * group_dir;
 #define POST_STATUS_NONE          0x00      //Máscara inicial
 #define POST_STATUS_HAS_CODE      0x01
 #define POST_STATUS_HAS_MASK      0x02
+#define POST_STATUS_HAS_UPDATE    0x04
 /*---------------------------Estructura de configuracion------------------------------------------------*/
 typedef struct sleepy_config_s {
   unsigned long interval;
@@ -373,6 +375,35 @@ static void op_post_handler(void *request, void *response, uint8_t *buffer,uint1
 /*------------Recurso de configuracion operacion---------------------------------------------------------------*/
 RESOURCE(operation_make,"title=\"Operation Make: ""GET|POST Code=<code>&Mask=<mask_code>\";rt=\"Control\"",op_get_handler, op_post_handler, NULL, NULL);
 /*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+static void update_post_handler(void *request, void *response, uint8_t *buffer,uint16_t preferred_size, int32_t *offset)
+{
+  const char *ptr = NULL;
+  char tmp_buf[16];
+  uint8_t post_status = POST_STATUS_NONE;
+  int rv;
+
+  rv = REST.get_post_variable(request, "binary", &ptr);     //Obtiene la variable "binary"
+  if(rv && rv < 16) {
+    memset(tmp_buf, 0, sizeof(tmp_buf));
+    memcpy(tmp_buf, ptr, rv);
+    rv = atoi(tmp_buf);
+
+    if(rv == 1) {
+      post_status |= POST_STATUS_HAS_UPDATE;
+    } else {
+      post_status = POST_STATUS_BAD;
+    }
+  }
+  /* Values are sane. Start de upadting process */
+  if(post_status & POST_STATUS_HAS_UPDATE) {
+    process_start(ota_download_th_p,NULL);
+  }
+}
+/*------------Recurso de actualizacion OAT---------------------------------------------------------------*/
+RESOURCE(update,"title=\"Update via OTA: ""POST Update=<binary> \";rt=\"Control\"",NULL, update_post_handler, NULL, NULL);
+/*---------------------------------------------------------------------------*/
+
 /*
  * If our preferred parent is not NBR_REACHABLE in the ND cache, NUD will send
  * a unicast NS and wait for NA. If NA fails then the neighbour will be removed
@@ -489,6 +520,7 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
   switch_to_normal();									              //Pasa a normal (REACHABLE) Realmente pasa al modo NOTIFY_OBSERVERS (1)
 
   etimer_set(&et_periodic, PERIODIC_INTERVAL);			//Fija el timer de intervalo (no configurable) un segundo
+
 
   while(1) {
 
