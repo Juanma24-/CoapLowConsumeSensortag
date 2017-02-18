@@ -1,16 +1,14 @@
 CONTIKI_PROJECT=border-router
 all: $(CONTIKI_PROJECT) 
 
-CONTIKI=../../../../
-
-MODULES += core/net/ipv6/multicast
+CONTIKI=../../../..
 
 #linker optimizations
 SMALL=1
 
 CFLAGS += -DPROJECT_CONF_H=\"project-conf.h\"
 PROJECT_SOURCEFILES += slip-bridge.c
-
+MODULES += core/net/ipv6/multicast
 #Simple built-in webserver is the default.
 #Override with make WITH_WEBSERVER=0 for no webserver.
 #WITH_WEBSERVER=webserver-name will use /apps/webserver-name if it can be

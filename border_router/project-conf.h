@@ -34,16 +34,16 @@
 #include "net/ipv6/multicast/uip-mcast6-engines.h"
 
 #ifndef WITH_NON_STORING
-	#define WITH_NON_STORING 0 /* Set this to run with non-storing mode */
+#define WITH_NON_STORING 0 /* Set this to run with non-storing mode */
 #endif /* WITH_NON_STORING */
 
 #if WITH_NON_STORING
-	#undef RPL_NS_CONF_LINK_NUM
-	#define RPL_NS_CONF_LINK_NUM 40 							/* Number of links maintained at the root */
-	#undef UIP_CONF_MAX_ROUTES
-	#define UIP_CONF_MAX_ROUTES 0 								/* No need for routes */
-	#undef RPL_CONF_MOP
-	#define RPL_CONF_MOP RPL_MOP_NON_STORING 			/* Mode of operation*/
+#undef RPL_NS_CONF_LINK_NUM
+#define RPL_NS_CONF_LINK_NUM 40 /* Number of links maintained at the root */
+#undef UIP_CONF_MAX_ROUTES
+#define UIP_CONF_MAX_ROUTES 0 /* No need for routes */
+#undef RPL_CONF_MOP
+#define RPL_CONF_MOP RPL_MOP_NON_STORING /* Mode of operation*/
 #endif /* WITH_NON_STORING */
 
 #ifndef UIP_FALLBACK_INTERFACE
@@ -51,20 +51,46 @@
 #endif
 
 #ifndef QUEUEBUF_CONF_NUM
-#define QUEUEBUF_CONF_NUM          4					//Número de buffers de cola (un nº pequeño compromete el rendimiento)
+#define QUEUEBUF_CONF_NUM          4
 #endif
 
 #ifndef UIP_CONF_BUFFER_SIZE
-#define UIP_CONF_BUFFER_SIZE    140						//Tamaño del buffer para los paquetes UIP (límite superior de paquete IP)
+#define UIP_CONF_BUFFER_SIZE    256					//Importante para conseguir el buen funcionamiento de Coap
 #endif
 
 #ifndef UIP_CONF_RECEIVE_WINDOW
-#define UIP_CONF_RECEIVE_WINDOW  60					 //Tamaño de la ventana de recepción
+#define UIP_CONF_RECEIVE_WINDOW  60
 #endif
 
 #ifndef WEBSERVER_CONF_CFS_CONNS
 #define WEBSERVER_CONF_CFS_CONNS 2
 #endif
+/*---------------------------------------------------------------------------*/
+/* Radio configuration */
+#define PLATFORM_CONF_USE_CC1200        0
+/*---------------------------------------------------------------------------*/
+/* Debug output via UART */
+#define DBG_CONF_USB                    0
+/*---------------------------------------------------------------------------*/
+/*
+ * Enable RF specific statistics.
+ * Disable CONTIKI_WITH_RIME in the project's Makefile to save memory if
+ * not used.
+ */
+#define RIMESTATS_CONF_ENABLED          0
+/*
+ * Enable platform specific statistics. This causes the border router to
+ * collect additional information.
+ */
+#define PLATFORM_CONF_STATS             1
+/*---------------------------------------------------------------------------*/
+
+#define CONTIKIMAC_CONF_WITH_PHASE_OPTIMIZATION 1
+#define WITH_FAST_SLEEP 0
+
+//#define CONTIKIMAC_CONF_CYCLE_TIME 131072
+#define NETSTACK_CONF_RDC_CHANNEL_CHECK_RATE 8
+
 
 /* Change this to switch engines. Engine codes in uip-mcast6-engines.h */
 #define UIP_MCAST6_CONF_ENGINE UIP_MCAST6_ENGINE_ROLL_TM
@@ -76,17 +102,21 @@
 #undef UIP_CONF_ND6_SEND_RA
 #undef UIP_CONF_ROUTER
 #undef NETSTACK_CONF_WITH_IPV6
-#define UIP_CONF_ND6_SEND_RA         0			//
-#define UIP_CONF_ROUTER              1			//El nodo actúa como Router
-#define UIP_MCAST6_ROUTE_CONF_ROUTES 1			//RPL es usado para rutar Ipv6
-#define NETSTACK_CONF_WITH_IPV6      1			//Especifica que ipv6 debe ser usado
+#undef UIP_IPV6_MULTICAST
+#define UIP_CONF_IPV6_RPL            1
+#define UIP_CONF_ND6_SEND_RA         0
+#define UIP_CONF_ROUTER              1
+#define UIP_MCAST6_ROUTE_CONF_ROUTES 1
+#define NETSTACK_CONF_WITH_IPV6      1
+#define UIP_IPV6_MULTICAST           1
 
 #undef UIP_CONF_TCP
-#define UIP_CONF_TCP 1											//Se da soporte a TCP (posible fuente de conflicto)
+#define UIP_CONF_TCP 1
 
 /* Code/RAM footprint savings so that things will fit on our device */
 #undef NBR_TABLE_CONF_MAX_NEIGHBORS
 #undef UIP_CONF_MAX_ROUTES
-#define NBR_TABLE_CONF_MAX_NEIGHBORS  10		//Máximo número de vecinos en tabla de dispositivo
-#define UIP_CONF_MAX_ROUTES           10		//Máximo número de rutas que puede manejar el dispositivo
-#endif /* PROJECT_ROUTER_CONF_H_ */
+#define NBR_TABLE_CONF_MAX_NEIGHBORS  10
+#define UIP_CONF_MAX_ROUTES           10
+
+#endif /* PROJECT_CONF_H_ */
