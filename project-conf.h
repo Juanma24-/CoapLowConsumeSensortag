@@ -44,7 +44,7 @@
 #undef NETSTACK_CONF_WITH_IPV6
 #define UIP_CONF_ND6_SEND_RA         0
 #define UIP_CONF_ROUTER              1			//El nodo actúa como Router
-#define UIP_CONF_IPV6_RPL			       1		  //RPL es usado para rutar Ipv6
+#define UIP_CONF_IPV6_RPL			 1		     //RPL es usado para rutar Ipv6
 #define UIP_MCAST6_ROUTE_CONF_ROUTES 1			//Tamaño de Multicast routing table
 #define NETSTACK_CONF_WITH_IPV6      1			//Especifica: ipv6 debe ser usado
 

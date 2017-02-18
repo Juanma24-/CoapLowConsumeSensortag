@@ -90,6 +90,7 @@ static uip_ds6_maddr_t * group_dir;
 #define POST_STATUS_NONE          0x00      //Máscara inicial
 #define POST_STATUS_HAS_CODE      0x01
 #define POST_STATUS_HAS_MASK      0x02
+#define POST_STATUS_HAS_JOINED    0x04
 /*---------------------------Estructura de configuracion------------------------------------------------*/
 typedef struct sleepy_config_s {
   unsigned long interval;
@@ -126,6 +127,27 @@ static process_event_t event_new_op;            //Evento de Operacion
 static uint8_t state;                           //Variable de estado
 /*---------------------------------------------------------------------------*/
 const char *not_supported_msg = "Supported:text/plain,application/json";
+/*------------------------Función de unión a multicast group-----------------*/
+static uip_ds6_maddr_t * join_mcast_group(void)
+{
+  uip_ipaddr_t addr;
+  uip_ds6_maddr_t *rv;
+
+  /* First, set our v6 global */
+  uip_ip6addr(&addr, UIP_DS6_DEFAULT_PREFIX, 0, 0, 0, 0, 0, 0, 0);    //Crea una direccion ipv6 ~(fd00::)
+  uip_ds6_set_addr_iid(&addr, &uip_lladdr);                           //Fija los ultimos 64 bits de la dirección con la dirección MAC
+  uip_ds6_addr_add(&addr, 0, ADDR_AUTOCONF);                          //Añade una dirección unicast (addr) a la interfaz
+
+  /*
+   * IPHC will use stateless multicast compression for this destination
+   * (M=1, DAC=0), with 32 inline bits (1E 89 AB CD)
+   */
+  uip_ip6addr(&addr, 0xFF1E,0,0,0,0,0,0x89,0xABCD);                   //Crea la direccion (FF1E::89:ABCD)
+  rv = uip_ds6_maddr_add(&addr);                                      //Añade la dirección multicast rv a la interfaz (Sup)
+
+  return rv;
+}
+/*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*/
 PROCESS(very_sleepy_demo_process, "CC13xx/CC26xx very sleepy process");
 AUTOSTART_PROCESSES(&very_sleepy_demo_process);
@@ -180,8 +202,48 @@ static void groupipv6_get_handler(void *request, void *response, uint8_t *buffer
     REST.set_response_payload(response, not_supported_msg,strlen(not_supported_msg));
   }
 }
+static void groupipv6_post_handler(void *request, void *response, uint8_t *buffer,uint16_t preferred_size, int32_t *offset)
+{
+  const char *ptr = NULL;
+  char tmp_buf[16];
+  uint8_t unido = 0;
+  uint8_t post_status = POST_STATUS_NONE;
+  int rv;
+
+  rv = REST.get_post_variable(request, "Unido", &ptr); //Obtiene la variable "unido"
+  if(rv && rv < 16) {
+    memset(tmp_buf, 0, sizeof(tmp_buf));  //Reserva espacio para tmp_buf
+    memcpy(tmp_buf, ptr, rv);             //Pasa el valor de la direccion ptr a tmp_buf
+    rv = atoi(tmp_buf);                   //Convierte un String a Entero
+
+    unido = rv;
+    if(unido==1) {                           //Si unido==1
+      post_status |= POST_STATUS_HAS_JOINED;
+      group_dir = join_mcast_group();                           //Unión al grupo multicast
+      sink_conn = udp_new(NULL, UIP_HTONS(0), NULL);            //Nueva conexión UDP (con puerto por defecto)
+      udp_bind(sink_conn, UIP_HTONS(MCAST_SINK_UDP_PORT));      //Fija el puerto para la conexión UDP
+    }
+    else if (unido == 0){
+            //TODO:Introducir código para abandonar el grupo
+    } 
+    else {                             
+      post_status |= POST_STATUS_BAD;//Se suma la máscara a post_status
+    }
+  }
+  if((post_status & POST_STATUS_BAD) == POST_STATUS_BAD ||
+     post_status == POST_STATUS_NONE) {
+    REST.set_response_status(response, REST.status.BAD_REQUEST);
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,
+             "Unido=0|1");
+    REST.set_response_payload(response, buffer, strlen((char *)buffer));
+    return;
+  }
+
+
+  process_post(&very_sleepy_demo_process, event_new_op, NULL);
+}
 /*---------------------------------------------------------------------------*/
-RESOURCE(groupipv6_resource, "title=\"Group Direction\";obs",groupipv6_get_handler, NULL, NULL, NULL);  //
+RESOURCE(groupipv6, "title=\"Group Direction: ""GET|POST Unido=0|1\";rt=\"Control\"",groupipv6_get_handler, groupipv6_post_handler, NULL, NULL);  //
 
 /*---------------------------------------------------------------------------*/
 static void conf_get_handler(void *request, void *response, uint8_t *buffer,uint16_t preferred_size, int32_t *offset)
@@ -433,27 +495,7 @@ static void switch_to_very_sleepy(void)
 {
   state = STATE_VERY_SLEEPY;
 }
-/*------------------------Función de unión a multicast group-----------------*/
-static uip_ds6_maddr_t * join_mcast_group(void)
-{
-  uip_ipaddr_t addr;
-  uip_ds6_maddr_t *rv;
 
-  /* First, set our v6 global */
-  uip_ip6addr(&addr, UIP_DS6_DEFAULT_PREFIX, 0, 0, 0, 0, 0, 0, 0);    //Crea una direccion ipv6 ~(fd00::)
-  uip_ds6_set_addr_iid(&addr, &uip_lladdr);                           //Fija los ultimos 64 bits de la dirección con la dirección MAC
-  uip_ds6_addr_add(&addr, 0, ADDR_AUTOCONF);                          //Añade una dirección unicast (addr) a la interfaz
-
-  /*
-   * IPHC will use stateless multicast compression for this destination
-   * (M=1, DAC=0), with 32 inline bits (1E 89 AB CD)
-   */
-  uip_ip6addr(&addr, 0xFF1E,0,0,0,0,0,0x89,0xABCD);                   //Crea la direccion (FF1E::89:ABCD)
-  rv = uip_ds6_maddr_add(&addr);                                      //Añade la dirección multicast rv a la interfaz (Sup)
-
-  return rv;
-}
-/*---------------------------------------------------------------------------*/
 PROCESS_THREAD(very_sleepy_demo_process, ev, data)
 {
 	/*Cada segundo evalúa el estado del micro y dependiendo de lo que haya ocurrido continua durmiendo o despierta*/
@@ -472,10 +514,7 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
   event_new_config = process_alloc_event();				   //Se reserva espacio para evento de nueva configuración
   event_new_op = process_alloc_event();              //Se reserva espacio para evento de nueva operacion
 
-  group_dir = join_mcast_group();                           //Unión al grupo multicast
-  sink_conn = udp_new(NULL, UIP_HTONS(0), NULL);            //Nueva conexión UDP (con puerto por defecto)
-  udp_bind(sink_conn, UIP_HTONS(MCAST_SINK_UDP_PORT));      //Fija el puerto para la conexión UDP
-
+  
 
   rest_init_engine();									               //Activa el motor REST (permite el recibir y mandar datos)
 
@@ -483,7 +522,8 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
   rest_activate_resource(&readings_resource, "sen/readings");       //Activa el recurso de lecturas
   rest_activate_resource(&very_sleepy_conf, "very_sleepy_config");  //Activa el recurso de configuracion
   rest_activate_resource(&operation_make, "Operation Make");        //Activa el recurso de Operacion
-
+  rest_activate_resource(&groupipv6,"Grupo Multicast");
+  
   printf("Very Sleepy Demo Process\n");
 
   switch_to_normal();									              //Pasa a normal (REACHABLE) Realmente pasa al modo NOTIFY_OBSERVERS (1)
