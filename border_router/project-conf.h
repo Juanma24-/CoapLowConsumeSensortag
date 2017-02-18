@@ -52,9 +52,9 @@
 #define QUEUEBUF_CONF_NUM          4
 #endif
 
-//#ifndef UIP_CONF_BUFFER_SIZE
-//#define UIP_CONF_BUFFER_SIZE    140
-//#endif
+#ifndef UIP_CONF_BUFFER_SIZE
+#define UIP_CONF_BUFFER_SIZE    256					//Importante para conseguir el buen funcionamiento de Coap
+#endif
 
 #ifndef UIP_CONF_RECEIVE_WINDOW
 #define UIP_CONF_RECEIVE_WINDOW  60
@@ -63,5 +63,29 @@
 #ifndef WEBSERVER_CONF_CFS_CONNS
 #define WEBSERVER_CONF_CFS_CONNS 2
 #endif
+/*---------------------------------------------------------------------------*/
+/* Radio configuration */
+#define PLATFORM_CONF_USE_CC1200        0
+/*---------------------------------------------------------------------------*/
+/* Debug output via UART */
+#define DBG_CONF_USB                    0
+/*---------------------------------------------------------------------------*/
+/*
+ * Enable RF specific statistics.
+ * Disable CONTIKI_WITH_RIME in the project's Makefile to save memory if
+ * not used.
+ */
+#define RIMESTATS_CONF_ENABLED          0
+/*
+ * Enable platform specific statistics. This causes the border router to
+ * collect additional information.
+ */
+#define PLATFORM_CONF_STATS             1
+/*---------------------------------------------------------------------------*/
 
+#define CONTIKIMAC_CONF_WITH_PHASE_OPTIMIZATION 1
+#define WITH_FAST_SLEEP 0
+
+//#define CONTIKIMAC_CONF_CYCLE_TIME 131072
+#define NETSTACK_CONF_RDC_CHANNEL_CHECK_RATE 8
 #endif /* PROJECT_ROUTER_CONF_H_ */

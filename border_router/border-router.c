@@ -43,7 +43,7 @@
 #include "net/rpl/rpl.h"
 #include "net/rpl/rpl-private.h"
 #if RPL_WITH_NON_STORING
-#include "net/rpl/rpl-ns.h"
+  #include "net/rpl/rpl-ns.h"
 #endif /* RPL_WITH_NON_STORING */
 #include "net/netstack.h"
 #include "dev/button-sensor.h"
@@ -79,8 +79,8 @@ AUTOSTART_PROCESSES(&border_router_process,&webserver_nogui_process);
  * enough program flash is available.
  */
 #define WEBSERVER_CONF_LOADTIME 0
-#define WEBSERVER_CONF_FILESTATS 0
-#define WEBSERVER_CONF_NEIGHBOR_STATUS 0
+#define WEBSERVER_CONF_FILESTATS 1
+#define WEBSERVER_CONF_NEIGHBOR_STATUS 1
 /* Adding links requires a larger RAM buffer. To avoid static allocation
  * the stack can be used for formatting; however tcp retransmissions
  * and multiple connections can result in garbled segments.
