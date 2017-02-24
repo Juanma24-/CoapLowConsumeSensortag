@@ -34,14 +34,18 @@
 #include "net/ipv6/multicast/uip-mcast6-engines.h"
 
 /* Change this to switch engines. Engine codes in uip-mcast6-engines.h */
-#define UIP_MCAST6_CONF_ENGINE UIP_MCAST6_ENGINE_ROLL_TM          //Se ha seleccionado el motor ROLL TM
+#define UIP_MCAST6_CONF_ENGINE UIP_MCAST6_ENGINE_SMRF          //Se ha seleccionado el motor SMRF
 /* For Imin: Use 16 over NullRDC, 64 over Contiki MAC */
-#define ROLL_TM_CONF_IMIN_1         64
+//#define ROLL_TM_CONF_IMIN_1         64
+#undef RPL_CONF_MOP
+#define RPL_CONF_MOP RPL_MOP_STORING_MULTICAST /* Mode of operation*/
+
 
 #undef UIP_CONF_IPV6_RPL
 #undef UIP_CONF_ND6_SEND_RA
 #undef UIP_CONF_ROUTER
 #undef NETSTACK_CONF_WITH_IPV6
+
 #define UIP_CONF_ND6_SEND_RA         0
 #define UIP_CONF_ROUTER              1			//El nodo actúa como Router
 #define UIP_CONF_IPV6_RPL			 1		     //RPL es usado para rutar Ipv6

@@ -57,7 +57,7 @@
 
 #include <string.h>
 
-#define MCAST_SINK_UDP_PORT 3001 /*Host byte order*/
+#define MCAST_SINK_UDP_PORT 5386 /*Host byte order*/
 static struct uip_udp_conn *sink_conn;
 #define UIP_IP_BUF  ((struct uip_ip_hdr *)&uip_buf[UIP_LLH_LEN])
 static uip_ds6_maddr_t * group_dir;
@@ -102,7 +102,7 @@ sleepy_config_t config;
 /*---------------------------Estructura de Operacion------------------------------------------------*/
 #define OPERATION_DEFAULT 1               //Operacion por defecto (1)
 #define OPERATION_MIN     1               //Código Minimo de operacion
-#define OPERATION_MAX     255             //Código máximo de operacio
+#define OPERATION_MAX     255             //Código máximo de operacion
 #define MASK_DEFAULT      0b00000001      //Máscara de operacion por defecto
 #define MASK_MIN          0b00000001      //Máscara de operacion mínima
 #define MASK_MAX          0b11111111      //Máscara de operacion máxima
@@ -124,6 +124,7 @@ static struct stimer st_min_mac_on_duration;    //Timer de mínima duración MAC
 static struct etimer et_periodic;               //Timer de interrupción periodica (1s)
 static process_event_t event_new_config;        //Evento de Configuracion
 static process_event_t event_new_op;            //Evento de Operacion
+static process_event_t event_join_mcast;		//Evento de union a grupo multicast.
 static uint8_t state;                           //Variable de estado
 /*---------------------------------------------------------------------------*/
 const char *not_supported_msg = "Supported:text/plain,application/json";
@@ -133,16 +134,16 @@ static uip_ds6_maddr_t * join_mcast_group(void)
   uip_ipaddr_t addr;
   uip_ds6_maddr_t *rv;
 
-  /* First, set our v6 global */
-  uip_ip6addr(&addr, UIP_DS6_DEFAULT_PREFIX, 0, 0, 0, 0, 0, 0, 0);    //Crea una direccion ipv6 ~(fd00::)
-  uip_ds6_set_addr_iid(&addr, &uip_lladdr);                           //Fija los ultimos 64 bits de la dirección con la dirección MAC
-  uip_ds6_addr_add(&addr, 0, ADDR_AUTOCONF);                          //Añade una dirección unicast (addr) a la interfaz
+  /* First, set our v6 global (DUDA DE SI ES NECESARIO O NO)*/
+  //suip_ip6addr(&addr, UIP_DS6_DEFAULT_PREFIX, 0, 0, 0, 0, 0, 0, 0);    //Crea una direccion ipv6 ~(fd00::)
+  //uip_ds6_set_addr_iid(&addr, &uip_lladdr);                           //Fija los ultimos 64 bits de la dirección con la dirección MAC
+  //uip_ds6_addr_add(&addr, 0, ADDR_AUTOCONF);                          //Añade una dirección unicast (addr) a la interfaz
 
   /*
    * IPHC will use stateless multicast compression for this destination
    * (M=1, DAC=0), with 32 inline bits (1E 89 AB CD)
    */
-  uip_ip6addr(&addr, 0xFF1E,0,0,0,0,0,0x89,0xABCD);                   //Crea la direccion (FF1E::89:ABCD)
+  uip_ip6addr(&addr, 0xBBBB,0,0,0,0,0,0x0089,0xABCD);                   //Crea la direccion (BBBB::89:ABCD)
   rv = uip_ds6_maddr_add(&addr);                                      //Añade la dirección multicast rv a la interfaz (Sup)
 
   return rv;
@@ -191,11 +192,13 @@ static void groupipv6_get_handler(void *request, void *response, uint8_t *buffer
 
   if(accept == -1 || accept == REST.type.APPLICATION_JSON) {
     REST.set_header_content_type(response, REST.type.APPLICATION_JSON);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Group_Dir\":{%lu}",(uint16_t*)group_dir); //Posible conflicto de tipo
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE,"{\"Group_Dir\":{[%x:%x:%x:%x:%x:%x:%x:%x]}}",group_dir->ipaddr.u16[0],group_dir->ipaddr.u16[1],group_dir->ipaddr.u16[2],
+    group_dir->ipaddr.u16[3],group_dir->ipaddr.u16[4],group_dir->ipaddr.u16[5],group_dir->ipaddr.u16[6],group_dir->ipaddr.u16[7]); //Posible conflicto de tipo
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else if(accept == REST.type.TEXT_PLAIN) {
     REST.set_header_content_type(response, REST.type.TEXT_PLAIN);
-    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "Group_Dir=%lu",(uint16_t*)group_dir);        //Posible conflicto de tipo
+    snprintf((char *)buffer, REST_MAX_CHUNK_SIZE, "Group_Dir=[%x:%x:%x:%x:%x:%x:%x:%x]",group_dir->ipaddr.u16[0],group_dir->ipaddr.u16[1],group_dir->ipaddr.u16[2],
+    group_dir->ipaddr.u16[3],group_dir->ipaddr.u16[4],group_dir->ipaddr.u16[5],group_dir->ipaddr.u16[6],group_dir->ipaddr.u16[7]);        //Posible conflicto de tipo
     REST.set_response_payload(response, buffer, strlen((char *)buffer));
   } else {
     REST.set_response_status(response, REST.status.NOT_ACCEPTABLE);
@@ -240,7 +243,7 @@ static void groupipv6_post_handler(void *request, void *response, uint8_t *buffe
   }
 
 
-  process_post(&very_sleepy_demo_process, event_new_op, NULL);
+  process_post(&very_sleepy_demo_process, event_join_mcast, NULL);
 }
 /*---------------------------------------------------------------------------*/
 RESOURCE(groupipv6, "title=\"Group Direction: ""GET|POST Unido=0|1\";rt=\"Control\"",groupipv6_get_handler, groupipv6_post_handler, NULL, NULL);  //
@@ -451,12 +454,15 @@ static uint8_t keep_mac_on(void)
 
   if(!stimer_expired(&st_min_mac_on_duration)) {      //Si el timer aún no ha cumplido
     return MAC_MUST_STAY_ON;                          //MAC activada
+    printf("MAC activada\n");
   }
 
 	#if RPL_WITH_PROBING
   		/* Determine if we are about to send a RPL probe */
   		if(CLOCK_LT(etimer_expiration_time(&rpl_get_default_instance()->probing_timer.etimer),(clock_time() + PERIODIC_INTERVAL))) {
     		rv = MAC_MUST_STAY_ON;
+    		printf("MAC activada\n");
+
   		}
 	#endif
 
@@ -466,9 +472,14 @@ static uint8_t keep_mac_on(void)
   if(nbr == NULL) {
     /* We don't have a default route, or it's not reachable (NUD likely). */
     rv = MAC_MUST_STAY_ON;
+    printf("MAC activada\n");
+
   } else {
     if(nbr->state != NBR_REACHABLE) {
       rv = MAC_MUST_STAY_ON;
+      printf("MAC activada\n");
+
+
     }
   }
 
@@ -503,17 +514,17 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
 
   PROCESS_BEGIN();
 
-  SENSORS_ACTIVATE(batmon_sensor);			             //Inicia el sensor de la batería
+  SENSORS_ACTIVATE(batmon_sensor);			             		//Inicia el sensor de la batería
   config.mode = VERY_SLEEPY_MODE_OFF;					       //Configura el Modo por defecto
-  config.interval = PERIODIC_INTERVAL_DEFAULT;			 //Configura el Intervalo por defecto (30s)
-  config.duration = NORMAL_OP_DURATION_DEFAULT;			 //Configura la duracion por defecto  (10s)
-  operation.code = OPERATION_DEFAULT;                //Ninguna Operacion en marcha
-  operation.mask= MASK_DEFAULT;                      //Máscara para operación por defecto
-  state = STATE_NORMAL;									             //Estado de inicio (nec al reset)
+  config.interval = PERIODIC_INTERVAL_DEFAULT;			 		//Configura el Intervalo por defecto (30s)
+  config.duration = NORMAL_OP_DURATION_DEFAULT;			 		//Configura la duracion por defecto  (10s)
+  operation.code = OPERATION_DEFAULT;                			//Ninguna Operacion en marcha
+  operation.mask= MASK_DEFAULT;                      			//Máscara para operación por defecto
+  state = STATE_NORMAL;									        //Estado de inicio (nec al reset)
 
-  event_new_config = process_alloc_event();				   //Se reserva espacio para evento de nueva configuración
-  event_new_op = process_alloc_event();              //Se reserva espacio para evento de nueva operacion
-
+  event_new_config = process_alloc_event();				   		//Se reserva espacio para evento de nueva configuración
+  event_new_op = process_alloc_event();              			//Se reserva espacio para evento de nueva operacion
+  event_join_mcast = process_alloc_event();						//Se reserva espacio para evento mcast
   
 
   rest_init_engine();									               //Activa el motor REST (permite el recibir y mandar datos)
@@ -537,15 +548,20 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
     if(ev == sensors_event && data == &button_left_sensor) {	//Si se pulsa el boton se pasa a notificar observadores
       switch_to_normal();
       leds_off(LEDS_RED);         //Al pulsar operario se apaga el LED ROJO
+      printf("Apagado LED Rojo (pulsado botón)\n");
     }
-
+    if(ev == event_join_mcast){
+    	printf("Evento mcast detectado\n");
+    }
     if(ev == event_new_config) {								              //Si entra una nueva configuracion (¿igual que switch_to_normal?)
       stimer_set(&st_interval, config.interval);				      //Se fija el nuevo intervalo (No es de evento, hay que evaluarlo)
       stimer_set(&st_duration, config.duration);				      //Se fija la nueva duracion (No es de evento, hay que evaluarlo)
+      printf("Detectado evento de nueva configuración, fijando timers de intervalo y duracion\n");
     }
     if(ev == event_new_op){
       if(operation.code & operation.mask){                    //Si la operacion corresponde con la máscara del dispositivo
         leds_on(LEDS_RED);                                    //Enciende el LED ROJO
+        printf("Operación coincidente en máscara de dispositivo\n");
       }else{                                                  //En caso contrario
         leds_off(LEDS_RED);                                   //Apaga los leds (Medida para solventar error de operario)
       }
@@ -570,19 +586,22 @@ PROCESS_THREAD(very_sleepy_demo_process, ev, data)
        * send notifications to observers as required.
        */
       if(state == STATE_NOTIFY_OBSERVERS) {							    //Si el estado es notificar observadores
-        REST.notify_subscribers(&readings_resource);				//Envia a traves de REST un recurso "readings"
-        state = STATE_NORMAL;										            //Cambia a estado normal
+        REST.notify_subscribers(&readings_resource);					//Envia a traves de REST un recurso "readings"
+        state = STATE_NORMAL;										    //Cambia a estado normal
+        printf("Paso a estado normal\n");
       }
 
       if(state == STATE_NORMAL) {									          //Si está en estado normal
-        if(stimer_expired(&st_duration)) {							    //Y el timer de nueva configuracion ha expirado
-          stimer_set(&st_duration, config.duration);				//Se fija el timer de nuevo
-          if(config.mode == VERY_SLEEPY_MODE_ON) {					//Y si la configuracion nueva muestra modo Sleepy
-            switch_to_very_sleepy();								        //Pasamos a Modo Sleepy
+        if(stimer_expired(&st_duration)) {							    	  //Y el timer de nueva configuracion ha expirado
+          stimer_set(&st_duration, config.duration);						  //Se fija el timer de nuevo
+          if(config.mode == VERY_SLEEPY_MODE_ON) {							  //Y si la configuracion nueva muestra modo Sleepy
+          	printf("Paso a modo de sueño profundo\n");
+            switch_to_very_sleepy();								          //Pasamos a Modo Sleepy
           }
         }
       } else if(state == STATE_VERY_SLEEPY) {						    //Si estamos en modo Sleepy
         if(stimer_expired(&st_interval)) {							    //Y el timer de intervalo ha expirado
+        	printf("Paso a modo normal, expirado tiempo de intervalo\n");
           switch_to_normal();										            //Cambia a normal
         }
       }
